@@ -1,0 +1,53 @@
+
+
+@mixin btn()
+    display: flex
+    height: 44px
+    padding: 10px 20px
+    justify-content: center
+    align-items: center
+    border-radius: 10px
+    &-primary
+        border: 1px solid $mainDark
+        color: $mainDark
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        background-color: #fff
+        svg
+            transition: fill 0.3s
+        &-nobg
+            background-color: transparent
+        &:hover
+            background-color: $mainDark
+            color: #fff
+            svg
+                fill: #fff
+    &-white
+        border: 1px solid #fff
+        color: #fff
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        background-color: #fff
+        svg
+            transition: fill 0.3s
+        &:hover
+            background-color: #fff
+            color: $mainDark
+            svg
+                fill: $mainDark
+        &-nobg
+            border: 1px solid #fff
+            color: #fff
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            background-color: transparent
+            svg
+                transition: fill 0.3s
+            &:hover
+                background-color: #fff
+                color: $mainDark
+                svg
+                    fill: $mainDark

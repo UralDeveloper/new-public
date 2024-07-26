@@ -1,0 +1,83 @@
+.footerMap
+    position: relative
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    flex-direction: column
+    height: 850px
+    margin-top: 80px
+    // @media screen and ( min-width: 768px )
+    &-map
+        position: relative
+        width: 100%
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 1
+        @media screen and ( min-width: 768px )
+            position: absolute
+            bottom: 0
+            left: 0
+        iframe
+            user-select: none
+            pointer-events: none
+            height: 760px
+    &-contacts
+        box-sizing: border-box
+        border: 2px solid rgb(217, 217, 217)
+        background: rgb(255, 255, 255)
+        padding: 20px
+        display: flex
+        flex-direction: column
+        gap: 52px
+        @media screen and ( min-width: 768px )
+            padding: 60px
+        &-blockTitle
+            color: rgb(150, 150, 150)
+            font-family: Lighthaus
+            font-size:  clamp(36px, 5vw, 48px)
+            font-weight: 400
+            line-height:1.5EM
+            letter-spacing: 0%
+            text-align: left
+            margin-bottom: 0
+        &-wrapper
+            display: flex
+            flex-direction: row
+            gap: 20px 76px
+            flex-wrap: wrap
+        &-item
+            display: flex
+            flex-direction: column
+            gap: 20px
+        &-title
+            color: rgb(150, 150, 150)
+            font-size: 24px
+            font-weight: 600
+            line-height: 33px
+            letter-spacing: 0%
+            text-align: left
+            width: 100%
+        &-info
+            display: flex
+            a, span
+                color: rgb(38, 37, 35)
+                font-family: Vela Sans
+                font-size: 21px
+                font-weight: 400
+                line-height: 29px
+                letter-spacing: 0%
+                text-align: left
+                text-decoration: none
+    .container
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+        position: relative
+        z-index: 2
+        top: 0
+        width: 100%
+        @media screen and ( max-width: 768px )
+            padding: 0
+            
