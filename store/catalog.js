@@ -415,6 +415,8 @@ export const useCatalogStore = defineStore('catalogStore', {
       return data
     },
     selectedProduct: (state) => (parentId = null) => {
+      if (!state.selectedProductId) return;
+      
       let data = null
 
       const productId = state.selectedProductId

@@ -37,9 +37,7 @@ const catalogStore = useCatalogStore();
 
 const { selectedProduct, selectedProductId } = storeToRefs(catalogStore)
 
-const product = computed(() => selectedProduct.value())
+const product = computed(() => selectedProduct?.value())
 
-const productImage = computed(() => product.value.images[0])
-
-console.log(product.value);
+const productImage = computed(() => product?.value?.images[0])
 </script>

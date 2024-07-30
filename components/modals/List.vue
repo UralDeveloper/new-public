@@ -1,6 +1,6 @@
 <template>
     <!-- Modal Заказть торт -->
-    <ModalsProduct />
+    <ModalsProduct v-if="catalogStore.selectedProductId" />
     <!-- Modal Сертификат -->
     <div class="modal modal-product fade" id="certificate" tabindex="-1" aria-labelledby="modalLabel"
         aria-hidden="true">
@@ -437,3 +437,7 @@
         </div>
     </div>
 </template>
+
+<script setup>
+const catalogStore = useCatalogStore()
+</script>
