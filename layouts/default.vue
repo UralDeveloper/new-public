@@ -4,9 +4,11 @@
             <LayoutHeader v-if="!routeName.toString().includes('delivery')" :extraClass="extraClassForHeader"></LayoutHeader>
             <slot />
 
-            <LayoutFooter></LayoutFooter>
+            <LayoutFooter />
         </div>
     </div>
+
+    <LazyModalsList />
 </template>
 
 <script setup lang="ts">
