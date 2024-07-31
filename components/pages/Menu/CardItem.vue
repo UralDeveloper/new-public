@@ -6,7 +6,7 @@
         v-lazy-load 
         :key="props.item.id"
         >
-        <NuxtLink to="#">
+        <NuxtLink :to="`/delivery/${props.item.id}`">
             <span> {{ props.item.name }} </span>
         </NuxtLink>
         <!-- <div class="subtitle">
