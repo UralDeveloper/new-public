@@ -10,6 +10,8 @@
 const catalogStore = useCatalogStore();
 const commonStore = useCommonStore();
 
+const { pickupLocations } = storeToRefs(commonStore)
+
 
 useHead({
   link: [
@@ -26,15 +28,74 @@ useHead({
   ]
 })
 
+onMounted(() => {
+  if (!commonStore.selectedLocation) {
+    useChangeLocation('pickup', pickupLocations.value('pickup')[0]);
+  }
+})
+
+commonStore.loadSettings();
+catalogStore.getCatalog();
+
+commonStore.getPickups();
+commonStore.getDeliveryTimes();
+
 // commonStore.getTemplates();
 
 // commonStore.getInfoTitle();
 // commonStore.getMenu();
 // commonStore.getContacts();
 // commonStore.getBanners();
-// commonStore.getDeliveryTimes();
 
-commonStore.loadSettings();
-catalogStore.getCatalog();
 
 </script>
+
+<style>
+:root {
+  --app-height: 100%;
+
+  --white: #ffffff;
+
+  --mainBg: #ffffff;
+
+  --black: #000000;
+  --blackText: #141414;
+  --blackText2: #262523;
+  --blackText3: #262626;
+
+  --grayBg: #F5F4F2;
+  --grayBg2: #F9F9F9;
+  --grayText: #969696;
+  --grayText2: #D9D9D9;
+
+  --orange: #FF6600;
+  --orangeLight: #FFEFE5;
+
+  --yellow: #FEDE59;
+  --yellowLight: #FFF6CE;
+  --yellowLightSecondary: #FFF9DF;
+  --yellowDark: #FFCE00;
+
+  --blue: #50ADCA;
+
+  --red: #EC2525;
+
+  --green: #49BA40;
+  --greenLight: #E4F3D9;
+  --greenDark: #089B43;
+}
+button {
+  background: none;
+  border: 0;
+}
+input {
+  border: 0;
+}
+p {
+  margin-bottom: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+</style>

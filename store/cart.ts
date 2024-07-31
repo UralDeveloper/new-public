@@ -99,9 +99,9 @@ export const useCartStore = defineStore('cartStore', {
     bonusesApplied: 0,
     appliedAutoCoupons: [],
     defaultImages: {
-      giftImg: '/images/gift_cart.jpg',
-      promoPercent: '/images/icon-sale.svg',
-      promoFixed: '/images/ruble.svg',
+      giftImg: 'assets/img/gift_cart.jpg',
+      promoPercent: 'assets/img/icon-sale.svg',
+      promoFixed: 'assets/img/ruble.svg',
     },
     isGetDiscountInProcess: false,
     needGetDiscountRestart: false,

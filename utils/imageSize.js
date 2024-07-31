@@ -1,5 +1,5 @@
 export default (src, type) => {
-  if(!src) return '/images/default-load.gif';
+  if(!src) return '/img/default-load.gif';
   if (type) {
     const str = src ? src.split('.') : []
 

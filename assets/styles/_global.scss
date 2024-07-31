@@ -1,0 +1,90 @@
+:root {
+  --app-height: 100%;
+
+  --white: #ffffff;
+
+  --mainBg: #ffffff;
+
+  --black: #000000;
+  --blackText: #141414;
+  --blackText2: #262523;
+  --blackText3: #262626;
+
+  --grayBg: #F5F4F2;
+  --grayBg2: #F9F9F9;
+  --grayText: #969696;
+  --grayText2: #D9D9D9;
+
+  --orange: #FF6600;
+  --orangeLight: #FFEFE5;
+
+  --yellow: #FEDE59;
+  --yellowLight: #FFF6CE;
+  --yellowLightSecondary: #FFF9DF;
+  --yellowDark: #FFCE00;
+
+  --blue: #50ADCA;
+
+  --red: #EC2525;
+
+  --green: #49BA40;
+  --greenLight: #E4F3D9;
+  --greenDark: #089B43;
+}
+
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  
+  font-size: 16px;
+  // font-family: 'Gilroy';
+  color: var(--blackText);
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+button {
+  touch-action: manipulation;
+}
+
+// убираем стрелки у инпутов при type="number"
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='numbr'] {
+  -moz-appearance: textfield;
+}
+
+.exact-active-link {
+  cursor: default;
+  pointer-events: none;
+}
+
+img[src=""] {
+  display: none;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  // @include mq($bp-small) {
+  //   padding: 0 30px;
+  // }
+}

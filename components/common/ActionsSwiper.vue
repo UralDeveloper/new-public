@@ -50,6 +50,8 @@
 </template>
 
 <script setup lang="ts">
+import Swiper from 'swiper';
+
 watchEffect(() => {
     nextTick(() => {
         if (process.client) {

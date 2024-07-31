@@ -57,7 +57,7 @@
                     <NuxtLink data-bs-toggle="modal" data-bs-target="#bookingModal"
                         class="btn btn-white btn-white-nobg">Забронировать стол</NuxtLink>
                     <!-- <NuxtLink to="#" class="btn btn-primary btn-primary-nobg">Забронировать стол</NuxtLink> -->
-                    <NuxtLink to="#" class="btn-cart">
+                    <NuxtLink @click.prevent="cartStore.toggleShowCartModal(true)" class="btn-cart">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <mask id="mask3_18862" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000"
@@ -70,7 +70,7 @@
                                     fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
                             </g>
                         </svg>
-                        <span class="priceRub">0</span>
+                        <span class="priceRub"> {{ cartStore.cartItemsLength }} </span>
                     </NuxtLink>
                     <NuxtLink to="#" class="btn-profile">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -115,6 +115,8 @@
 </template>
 
 <script setup lang="ts">
+const cartStore = useCartStore();
+
 const props = defineProps({
     extraClass: {
         type: String,

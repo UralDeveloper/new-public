@@ -1,4 +1,8 @@
 <template>
+    <ModalsCart v-if="cartStore.isShowCartModal" />
+
+    <ModalsChooseDiscount v-if="chooseDiscountStore.isShowChooseDiscountModal" />
+
     <!-- Modal Заказть торт -->
     <ModalsProduct v-if="catalogStore.selectedProductId" />
     <!-- Modal Сертификат -->
@@ -440,4 +444,6 @@
 
 <script setup lang="ts">
 const catalogStore = useCatalogStore()
+const cartStore = useCartStore();
+const chooseDiscountStore = useChooseDiscountStore();
 </script>
