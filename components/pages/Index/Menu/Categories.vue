@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="header-row-left">
                     <div class="header-logo">
-                        <a href="/">
+                        <NuxtLink to="/">
                             <svg width="133.150635" height="48.000000" viewBox="0 0 133.151 48" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <defs>
@@ -40,21 +40,21 @@
                                 </g>
                             </svg>
 
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
                 <div class="header-row-center">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Бонусная карта</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/products">Торты на заказ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/products">Идеально для подарка</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/menu">Меню</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/gallery">Галерея</a></li>
+                        <li class="nav-item"><NuxtLink class="nav-link" to="/">Главная</NuxtLink></li>
+                        <li class="nav-item"><NuxtLink class="nav-link" to="#">Бонусная карта</NuxtLink></li>
+                        <li class="nav-item"><NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink></li>
+                        <li class="nav-item"><NuxtLink class="nav-link" to="/products">Идеально для подарка</NuxtLink></li>
+                        <li class="nav-item"><NuxtLink class="nav-link" to="/menu">Меню</NuxtLink></li>
+                        <li class="nav-item"><NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink></li>
                     </ul>
                 </div>
                 <div class="header-row-right">
-                    <a href="#" class="btn btn-primary">Выйти</a>
+                    <NuxtLink to="#" class="btn btn-primary">Выйти</NuxtLink>
                 </div>
             </div>
         </div>
@@ -100,13 +100,13 @@
                         </div>
                         <ul class="navbar-nav">
                             <li class="nav-item" v-for="item in menu" :key="item.id">
-                                <a class="nav-link" :class="{'active': isActiveCategory(item)}" :href="`/delivery/${item.id}`">
+                                <NuxtLink class="nav-link" :class="{'active': isActiveCategory(item)}" :to="`/delivery/${item.id}`">
                                     {{ item.name }}
-                                </a>
+                                </NuxtLink>
                             </li>
                         </ul>
                         <div class="header-row-right">
-                            <a href="#" class="btn-cart">
+                            <NuxtLink to="#" class="btn-cart">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <mask id="mask3_18862" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000"
@@ -120,8 +120,8 @@
                                     </g>
                                 </svg>
                                 <span class="priceRub">0</span>
-                            </a>
-                            <a href="#" class="btn-profile">
+                            </NuxtLink>
+                            <NuxtLink to="#" class="btn-profile">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <mask id="mask3_18867" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -135,7 +135,7 @@
                                             fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
                                     </g>
                                 </svg>
-                            </a>
+                            </NuxtLink>
                         </div>
                     </div>
                 </div>

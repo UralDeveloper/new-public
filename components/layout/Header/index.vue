@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="header-row-left">
                     <div class="header-logo">
-                        <a href="/">
+                        <NuxtLink to="/">
                             <svg width="133.150635" height="48.000000" viewBox="0 0 133.151 48" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <defs>
@@ -39,7 +39,7 @@
                                         fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
                                 </g>
                             </svg>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="header-contacts">
                         <div class="icon">
@@ -50,14 +50,14 @@
                                     fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
                             </svg>
                         </div>
-                        <a href="tel:+7 992 090-28-25">+7 992 090-28-25</a>
+                        <NuxtLink to="tel:+7 992 090-28-25">+7 992 090-28-25</NuxtLink>
                     </div>
                 </div>
                 <div class="header-row-right">
-                    <a data-bs-toggle="modal" data-bs-target="#bookingModal"
-                        class="btn btn-white btn-white-nobg">Забронировать стол</a>
-                    <!-- <a href="#" class="btn btn-primary btn-primary-nobg">Забронировать стол</a> -->
-                    <a href="#" class="btn-cart">
+                    <NuxtLink data-bs-toggle="modal" data-bs-target="#bookingModal"
+                        class="btn btn-white btn-white-nobg">Забронировать стол</NuxtLink>
+                    <!-- <NuxtLink to="#" class="btn btn-primary btn-primary-nobg">Забронировать стол</NuxtLink> -->
+                    <NuxtLink to="#" class="btn-cart">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <mask id="mask3_18862" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000"
@@ -71,8 +71,8 @@
                             </g>
                         </svg>
                         <span class="priceRub">0</span>
-                    </a>
-                    <a href="#" class="btn-profile">
+                    </NuxtLink>
+                    <NuxtLink to="#" class="btn-profile">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <mask id="mask3_18867" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30"
@@ -85,7 +85,7 @@
                                     fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
                             </g>
                         </svg>
-                    </a>
+                    </NuxtLink>
                 </div>
             </div>
         </div>
@@ -98,14 +98,14 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active" href="/menu">Меню</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/delivery">Доставка</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Бонусная карта</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/gifts">Сертификаты</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/products">Торты на заказ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/events">Мероприятия</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/halls">Банкетные залы</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/gallery">Галерея</a></li>
+                            <li class="nav-item"><NuxtLink class="nav-link active" to="/menu">Меню</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="/delivery">Доставка</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="#">Бонусная карта</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="/gifts">Сертификаты</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="/events">Мероприятия</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="/halls">Банкетные залы</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink></li>
                         </ul>
                     </div>
                 </div>

@@ -26,16 +26,16 @@
             <div class="catalog-wrapper">
                 <div class="certificateItem">
                     <div class="certificateItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#certificate">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
                             <picture>
                                 <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/certificate_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="certificateItem-content">
                         <div class="certificateItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</a>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
                             </h4>
                             <span>
                                 Номинал: 1 000 ₽<br>
@@ -46,23 +46,23 @@
                             <div class="certificateItem-price">
                                 <span class="priceRub">2000</span>
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
+                                сертификат</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="certificateItem">
                     <div class="certificateItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#certificate">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
                             <picture>
                                 <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/certificate_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="certificateItem-content">
                         <div class="certificateItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</a>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
                             </h4>
                             <span>
                                 Номинал: 1 000 ₽<br>
@@ -73,23 +73,23 @@
                             <div class="certificateItem-price">
                                 <span class="priceRub">2000</span>
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
+                                сертификат</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="certificateItem">
                     <div class="certificateItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#certificate">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
                             <picture>
                                 <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/certificate_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="certificateItem-content">
                         <div class="certificateItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</a>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
                             </h4>
                             <span>
                                 Номинал: 1 000 ₽<br>
@@ -100,23 +100,23 @@
                             <div class="certificateItem-price">
                                 <span class="priceRub">2000</span>
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
+                                сертификат</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="certificateItem">
                     <div class="certificateItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#certificate">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
                             <picture>
                                 <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/certificate_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="certificateItem-content">
                         <div class="certificateItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</a>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
                             </h4>
                             <span>
                                 Номинал: 1 000 ₽<br>
@@ -127,8 +127,8 @@
                             <div class="certificateItem-price">
                                 <span class="priceRub">2000</span>
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
+                                сертификат</NuxtLink>
                         </div>
                     </div>
                 </div>

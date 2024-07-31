@@ -107,8 +107,8 @@
                     <span class="modal-form-footer">Наш менеджер свяжется с Вами в течение 20 минут</span>
                 </div>
                 <div class="modal-footer">
-                    <span>Нажимая кнопку “Отправить заявку” Вы принимаете условия <a href="#">пользовательского
-                            соглашения</a> и политики конфиденциальности</span>
+                    <span>Нажимая кнопку “Отправить заявку” Вы принимаете условия <NuxtLink to="#">пользовательского
+                            соглашения</NuxtLink> и политики конфиденциальности</span>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sendOrder"
                         data-bs-dismiss="modal">Отправить заявку</button>
                 </div>
@@ -242,8 +242,8 @@
                         </form>
                         <span class="modal-form-footer">Наш менеджер свяжется с Вами в течение 20 минут</span>
                         <div class="modal-footer">
-                            <span>Нажимая кнопку “Отправить заявку” Вы принимаете условия <a href="#">пользовательского
-                                    соглашения</a> и политики конфиденциальности</span>
+                            <span>Нажимая кнопку “Отправить заявку” Вы принимаете условия <NuxtLink to="#">пользовательского
+                                    соглашения</NuxtLink> и политики конфиденциальности</span>
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Отправить
                                 заявку</button>
                         </div>
@@ -291,7 +291,7 @@
                                             </div>
                                         </div>
                                         <div class="delivery-address-item-btn">
-                                            <a href="#">
+                                            <NuxtLink to="#">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <mask id="mask0_1702_24008" style="mask-type:alpha"
@@ -304,7 +304,7 @@
                                                             fill="#969696" />
                                                     </g>
                                                 </svg>
-                                            </a>
+                                            </NuxtLink>
                                         </div>
                                     </div>
                                     <div class="delivery-address-item">
@@ -320,7 +320,7 @@
                                             </div>
                                         </div>
                                         <div class="delivery-address-item-btn">
-                                            <a href="#">
+                                            <NuxtLink to="#">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <mask id="mask0_1702_24008" style="mask-type:alpha"
@@ -333,7 +333,7 @@
                                                             fill="#969696" />
                                                     </g>
                                                 </svg>
-                                            </a>
+                                            </NuxtLink>
                                         </div>
                                     </div>
                                     <div class="delivery-address-item">
@@ -349,7 +349,7 @@
                                             </div>
                                         </div>
                                         <div class="delivery-address-item-btn">
-                                            <a href="#">
+                                            <NuxtLink to="#">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <mask id="mask0_1702_24008" style="mask-type:alpha"
@@ -362,7 +362,7 @@
                                                             fill="#969696" />
                                                     </g>
                                                 </svg>
-                                            </a>
+                                            </NuxtLink>
                                         </div>
                                     </div>
                                     <div class="delivery-address-item">
@@ -378,7 +378,7 @@
                                             </div>
                                         </div>
                                         <div class="delivery-address-item-btn">
-                                            <a href="#">
+                                            <NuxtLink to="#">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <mask id="mask0_1702_24008" style="mask-type:alpha"
@@ -391,7 +391,7 @@
                                                             fill="#969696" />
                                                     </g>
                                                 </svg>
-                                            </a>
+                                            </NuxtLink>
                                         </div>
                                     </div>
                                     <div class="delivery-address-item">
@@ -407,7 +407,7 @@
                                             </div>
                                         </div>
                                         <div class="delivery-address-item-btn">
-                                            <a href="#">
+                                            <NuxtLink to="#">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <mask id="mask0_1702_24008" style="mask-type:alpha"
@@ -420,7 +420,7 @@
                                                             fill="#969696" />
                                                     </g>
                                                 </svg>
-                                            </a>
+                                            </NuxtLink>
                                         </div>
                                     </div>
                                 </div>

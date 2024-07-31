@@ -1,15 +1,15 @@
 <template>
     <div class="productItem" @click="openProduct">
         <div class="productItem-preview">
-            <a data-bs-toggle="modal" data-bs-target="#pie">
+            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                 <img :data-src="productImage" :key="props.product.id" v-lazy-load alt="">
-            </a>
+            </NuxtLink>
         </div>
         <div class="productItem-content">
             <div class="productItem-info">
-                <h4><a data-bs-toggle="modal" data-bs-target="#pie">
+                <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                     {{ props.product?.name }}
-                </a></h4>
+                </NuxtLink></h4>
                 <span>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua.
@@ -30,7 +30,7 @@
                 <div class="productItem-price">
                     <span class="priceRub"> {{ props.product.price }} ₽</span> 
                 </div>
-                <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать</a>
+                <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать</NuxtLink>
             </div>
         </div>
     </div>

@@ -25,16 +25,16 @@
             <div class="catalog-wrapper">
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -45,22 +45,22 @@
                             <div class="productItem-price">
                                 <span class="priceRub">2000</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -71,22 +71,22 @@
                             <div class="productItem-price">
                                 <span class="priceRub">2000,12</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -97,22 +97,22 @@
                             <div class="productItem-price">
                                 <span class="priceRub">16000</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -123,22 +123,22 @@
                             <div class="productItem-price">
                                 <span class="priceRub">25000,25</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -149,22 +149,22 @@
                             <div class="productItem-price">
                                 <span class="priceRub">2000</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -175,22 +175,22 @@
                             <div class="productItem-price">
                                 <span class="priceRub">2000,12</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -201,22 +201,22 @@
                             <div class="productItem-price">
                                 <span class="priceRub">2000</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
                 <div class="productItem">
                     <div class="productItem-preview">
-                        <a data-bs-toggle="modal" data-bs-target="#pie">
+                        <NuxtLink data-bs-toggle="modal" data-bs-target="#pie">
                             <picture>
                                 <source srcset="assets/img/remove/product_preview.webp" type="image/webp"><img
                                     src="assets/img/remove/product_preview.jpeg" alt="">
                             </picture>
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div class="productItem-content">
                         <div class="productItem-info">
-                            <h4><a data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</a></h4>
+                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#pie">Торт Новогодний</NuxtLink></h4>
                             <span>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
@@ -227,7 +227,7 @@
                             <div class="productItem-price">
                                 <span class="priceRub">2000,25</span>/ кг
                             </div>
-                            <a data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</a>
+                            <NuxtLink data-bs-toggle="modal" data-bs-target="#pie" class="btn btn-primary">Заказать торт</NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -235,3 +235,7 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+
+</script>

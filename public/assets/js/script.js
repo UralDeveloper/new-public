@@ -11,69 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         headerElement.style.marginBottom = "-" + headerHeight + 'px';
     }
 
-    if (document.querySelector(".events-swiper")) {
-        let eventSlider = new Swiper(".events-swiper", {
-            slidesPerView: 3,
-            spaceBetween: 24,
-            rewind: true,
-            breakpoints: {
-                320: {
-                    slidesPerView: 1
-                },
-                768: {
-                    slidesPerView: 2
-                },
-                1024: {
-                    slidesPerView: 3
-                }
-            }
-        })
-    }
-
-    if (document.querySelector(".gallery-swiper")) {
-        console.log('here');
-        let gallerySlider = new Swiper(".gallery-swiper", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            centeredSlides: true,
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        })
-    }
-
-    let swiper_actions = new Swiper('.actions-swiper', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        rewind: true,
-        autoplay: {
-            delay: 2000,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            }
-        }
-    })
-
     // if (document.querySelector(".priceRub")) {
     //     // Получаем все элементы span с классом priceRub
     //     const priceElements = document.querySelectorAll('span.priceRub');
