@@ -2,10 +2,10 @@
     <div class="layout-default">
         <div>
             <LayoutHeader v-if="!routeName.toString().includes('delivery')" :extraClass="extraClassForHeader"></LayoutHeader>  
-            
+
             <slot />
 
-            <LayoutFooter />
+            <!-- <LayoutFooter /> -->
         </div>
     </div>
 
