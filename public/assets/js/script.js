@@ -74,44 +74,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
-    if (document.querySelector(".priceRub")) {
-        // Получаем все элементы span с классом priceRub
-        const priceElements = document.querySelectorAll('span.priceRub');
+    // if (document.querySelector(".priceRub")) {
+    //     // Получаем все элементы span с классом priceRub
+    //     const priceElements = document.querySelectorAll('span.priceRub');
 
-        // Проходимся по каждому элементу и обновляем его содержимое
-        priceElements.forEach((element) => {
-            // Получаем текстовое содержимое span и удаляем пробелы
-            const priceText = element.textContent.replace(/\s+/g, '');
+    //     // Проходимся по каждому элементу и обновляем его содержимое
+    //     priceElements.forEach((element) => {
+    //         // Получаем текстовое содержимое span и удаляем пробелы
+    //         const priceText = element.textContent.replace(/\s+/g, '');
 
-            // Преобразуем текст в число, используя parseFloat
-            const originalPrice = parseFloat(priceText.replace(',', '.'));
+    //         // Преобразуем текст в число, используя parseFloat
+    //         const originalPrice = parseFloat(priceText.replace(',', '.'));
 
-            if (!isNaN(originalPrice)) {
-                // Проверяем, является ли число целым (integer)
-                const isInteger = originalPrice % 1 === 0;
+    //         if (!isNaN(originalPrice)) {
+    //             // Проверяем, является ли число целым (integer)
+    //             const isInteger = originalPrice % 1 === 0;
 
-                // Форматируем числовое значение в формат рублей
-                const formattedPrice = formatPriceRub(originalPrice, isInteger);
+    //             // Форматируем числовое значение в формат рублей
+    //             const formattedPrice = formatPriceRub(originalPrice, isInteger);
 
-                // Обновляем содержимое span отформатированным значением
-                element.textContent = formattedPrice;
-            }
-        });
+    //             // Обновляем содержимое span отформатированным значением
+    //             element.textContent = formattedPrice;
+    //         }
+    //     });
 
-        // Функция для форматирования числа в формат рублей
-        function formatPriceRub(price, isInteger) {
-            const formatter = new Intl.NumberFormat('ru-RU', {
-                style: 'currency',
-                currency: 'RUB',
-                minimumFractionDigits: isInteger ? 0 : 2,
-                maximumFractionDigits: isInteger ? 0 : 2,
-            });
+    //     // Функция для форматирования числа в формат рублей
+    //     function formatPriceRub(price, isInteger) {
+    //         const formatter = new Intl.NumberFormat('ru-RU', {
+    //             style: 'currency',
+    //             currency: 'RUB',
+    //             minimumFractionDigits: isInteger ? 0 : 2,
+    //             maximumFractionDigits: isInteger ? 0 : 2,
+    //         });
 
-            return formatter.format(price);
-        }
-    }
+    //         return formatter.format(price);
+    //     }
+    // }
 });
-
 
 jQuery(document).ready(function () {
     jQuery('#datepicker').datepicker({
@@ -124,6 +123,7 @@ jQuery(document).ready(function () {
 
     });
 });
+
 function getCurrentDate() {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');

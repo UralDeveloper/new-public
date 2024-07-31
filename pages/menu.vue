@@ -22,7 +22,7 @@ const catalogStore = useCatalogStore();
 
 const { categories } = storeToRefs(catalogStore);
 
-const menu = categories?.value?.find(item => +item.id === 210)?.subCategories;
+const menu = computed(() => categories?.value?.find(item => +item.id === 210)?.subCategories);
 
 </script>
 

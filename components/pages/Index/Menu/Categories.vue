@@ -99,12 +99,11 @@
                             </button>
                         </div>
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active" href="/menu">Категория 1</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/menu">Категория 2</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/menu">Категория 3</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/menu">Категория 4</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/menu">Категория 5</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/menu">Категория 6</a></li>
+                            <li class="nav-item" v-for="item in menu" :key="item.id">
+                                <a class="nav-link" :class="{'active': isActiveCategory(item)}" :href="`/delivery/${item.id}`">
+                                    {{ item.name }}
+                                </a>
+                            </li>
                         </ul>
                         <div class="header-row-right">
                             <a href="#" class="btn-cart">
@@ -143,67 +142,18 @@
             </nav>
         </div>
     </div>
-
-    <div class="actions">
-        <div class="container">
-            <div class="swiper actions-swiper">
-                <div class="swiper-wrapper actions-wrapper">
-                    <div class="swiper-slide actions-item">
-                        <a href="#">
-                            <div class="actions-item-img">
-                                <picture>
-                                    <source srcset="assets/img/remove/action_item_1.webp" type="image/webp"><img
-                                        src="assets/img/remove/action_item_1.jpg" alt="">
-                                </picture>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide actions-item">
-                        <a href="#">
-                            <div class="actions-item-img">
-                                <picture>
-                                    <source srcset="assets/img/remove/action_item_1.webp" type="image/webp"><img
-                                        src="assets/img/remove/action_item_1.jpg" alt="">
-                                </picture>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide actions-item">
-                        <a href="#">
-                            <div class="actions-item-img">
-                                <picture>
-                                    <source srcset="assets/img/remove/action_item_1.webp" type="image/webp"><img
-                                        src="assets/img/remove/action_item_1.jpg" alt="">
-                                </picture>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide actions-item">
-                        <a href="#">
-                            <div class="actions-item-img">
-                                <picture>
-                                    <source srcset="assets/img/remove/action_item_1.webp" type="image/webp"><img
-                                        src="assets/img/remove/action_item_1.jpg" alt="">
-                                </picture>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="catalog catalog-delivery">
-        <CategoryBlock v-for="category in menu" :category="category" :key="category.id" />
-    </div>
-
 </template>
 
 <script setup lang="ts">
 const catalogStore = useCatalogStore();
 
+const route = useRoute();
+
 const { categories } = storeToRefs(catalogStore);
 
-const menu = categories?.value?.find(item => +item.id === 210)?.subCategories;
+const menu = computed(() => categories?.value?.find(item => +item.id === 210)?.subCategories);
 
+const isActiveCategory = (category:object) => {
+    return (route.params?.id && +route.params?.id === category?.id);
+}
 </script>
