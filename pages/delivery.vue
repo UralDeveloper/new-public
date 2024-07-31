@@ -199,7 +199,7 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 const catalogStore = useCatalogStore();
 
 const { categories } = storeToRefs(catalogStore);

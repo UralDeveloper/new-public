@@ -438,6 +438,6 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const catalogStore = useCatalogStore()
 </script>
