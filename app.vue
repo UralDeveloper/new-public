@@ -10,7 +10,6 @@
 const catalogStore = useCatalogStore();
 const commonStore = useCommonStore();
 
-await commonStore.loadSettings();
 
 useHead({
   link: [
@@ -27,15 +26,15 @@ useHead({
   ]
 })
 
-commonStore.getTemplates();
-//commonStore.getLogo()
-commonStore.getInfoTitle();
-commonStore.getMenu();
-commonStore.getContacts();
-commonStore.getBanners();
-commonStore.getDeliveryTimes();
+// commonStore.getTemplates();
 
-//commonStore.getLogo()
+// commonStore.getInfoTitle();
+// commonStore.getMenu();
+// commonStore.getContacts();
+// commonStore.getBanners();
+// commonStore.getDeliveryTimes();
+
+commonStore.loadSettings();
 catalogStore.getCatalog();
 
 </script>
