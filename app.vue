@@ -46,8 +46,6 @@ commonStore.getDeliveryTimes();
 // commonStore.getMenu();
 // commonStore.getContacts();
 // commonStore.getBanners();
-
-
 </script>
 
 <style>
