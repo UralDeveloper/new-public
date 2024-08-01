@@ -45,45 +45,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal Эвенты -->
-    <div class="modal modal-product fade" id="events" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-product-preview">
-                        <picture>
-                            <source srcset="assets/img/remove/event_preview_2.webp" type="image/webp"><img
-                                src="assets/img/remove/event_preview_2.jpg" alt="Подарочный сертификат №5">
-                        </picture>
-                    </div>
-                    <div class="modal-product-info">
-                        <div class="modal-product-info-title">
-                            <h3>Подарочный сертификат №5</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-product-info-description">
-                            <div class="eventStart">
-                                <span>Дата: 31.12.2023</span>
-                                <span>Время: 17:00</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. </p>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        </div>
-                        <div class="modal-product-info-footer">
-                            <div class="modal-product-info-footer-price">
-                                <span class="priceRub">2400</span>
-                            </div>
-                            <button type="button" class="btn btn-primary btn-primary-nobg"
-                                data-bs-dismiss="modal">Купить билет</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Modal Заказ торта -->
     <div class="modal modal-application_form fade" id="orderOfTheCake" tabindex="-1" aria-labelledby="orderModalLabel"
         aria-hidden="true">

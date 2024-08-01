@@ -43,6 +43,8 @@ commonStore.getDeliveryTimes();
 
 commonStore.getContacts();
 
+commonStore.getEvents();
+
 // commonStore.getTemplates();
 
 // commonStore.getInfoTitle();

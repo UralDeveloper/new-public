@@ -52,6 +52,8 @@ export const useCommonStore = defineStore('commonStore', {
 
     colors: null,
 
+    events: null,
+
     pending_order_cansel_time: null,
 
     activeProductModalSlide: 0,
@@ -227,6 +229,16 @@ export const useCommonStore = defineStore('commonStore', {
       }
       else {
         console.log("\not zones!\n")
+      }
+    },
+
+    async getEvents () {
+      const { data } = await useLazyAsyncData('events', () => $fetch('/api/wp-json/wp/v2/posts?_embed&categories=234'))
+
+      const obj = data?.value || []
+
+      if (obj) {
+        this.events = obj;
       }
     },
 
