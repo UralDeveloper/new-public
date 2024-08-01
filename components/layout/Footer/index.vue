@@ -78,7 +78,7 @@
                         <p class="footer__title" style="font-family: 'Lighthaus'">
                             Будь в курсе событий!
                         </p>
-                        <UIInput placeholder="E-mail" color="gray" label="Подпишитесь на E-mail рассылку" />
+                        <UIInput placeholder="E-mail" color="footer-gray" label="Подпишитесь на E-mail рассылку" />
                     </div>
                 </div>
             </div>

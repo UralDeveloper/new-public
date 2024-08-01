@@ -83,7 +83,7 @@ const emits = defineEmits(['update:modelValue', 'blur', 'focus'])
 
     margin-bottom: 12px;
 
-    &--gray {
+    &--footer-gray {
       color: #6e6e6d !important;
       font-weight: 400;
     }
@@ -102,7 +102,7 @@ const emits = defineEmits(['update:modelValue', 'blur', 'focus'])
     background: var(--grayBg2);
     border-radius: 14px;
 
-    &--gray {
+    &--footer-gray {
       &::-webkit-input-placeholder {
         color: var(--white) !important;
         font-weight: 400;
