@@ -281,3 +281,45 @@
     </div>
 
 </template>
+
+<script setup lang="ts">
+import Swiper from 'swiper';
+
+watchEffect(() => {
+    nextTick(() => {
+        if (process.client) {
+            let gallerySlider = new Swiper(".gallery-swiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                centeredSlides: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            })
+
+            let eventSlider = new Swiper(".events-swiper", {
+                slidesPerView: 3,
+                spaceBetween: 24,
+                rewind: true,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    }
+                }
+            })
+
+        }
+    })
+})
+</script>
