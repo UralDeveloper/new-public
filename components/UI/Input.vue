@@ -4,6 +4,7 @@
       v-if="label"
       :for="id"
       class="input__label"
+      :class="`input__label--${color}`"
     >
       {{ label }}
     </label>
@@ -81,6 +82,11 @@ const emits = defineEmits(['update:modelValue', 'blur', 'focus'])
     color: var(--black);
 
     margin-bottom: 12px;
+
+    &--gray {
+      color: #6e6e6d !important;
+      font-weight: 400;
+    }
   }
 
   &__area {
@@ -95,6 +101,16 @@ const emits = defineEmits(['update:modelValue', 'blur', 'focus'])
 
     background: var(--grayBg2);
     border-radius: 14px;
+
+    &--gray {
+      &::-webkit-input-placeholder {
+        color: var(--white) !important;
+        font-weight: 400;
+        font-family: 'Vela Sans';
+      }
+
+      background: #6e6e6d !important;
+    }
 
     &--white {
       background: var(--white);

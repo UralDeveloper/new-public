@@ -41,11 +41,12 @@ commonStore.getPickups();
 commonStore.getDelivery();
 commonStore.getDeliveryTimes();
 
+commonStore.getContacts();
+
 // commonStore.getTemplates();
 
 // commonStore.getInfoTitle();
 // commonStore.getMenu();
-// commonStore.getContacts();
 // commonStore.getBanners();
 </script>
 

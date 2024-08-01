@@ -5,7 +5,7 @@
 
             <slot />
 
-            <!-- <LayoutFooter /> -->
+            <LayoutFooter />
         </div>
         
         <LazyModalsList />
