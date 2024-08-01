@@ -1,5 +1,5 @@
 <template>
-    <div class="event eventItem" @click="emits('selected')">
+    <div class="event eventItem" :class="props.extraClass" @click="emits('selected')">
         <div class="eventItem-preview">
             <NuxtLink data-bs-target="#events" data-bs-toggle="modal">
                 <img :data-src="imageUrl" v-lazy-load :key="props.item.id" alt="">
@@ -27,6 +27,10 @@ const props = defineProps({
     item: {
         type: Object,
         default: {}
+    },
+    extraClass : {
+        type: String,
+        default: ''
     }
 })
 
