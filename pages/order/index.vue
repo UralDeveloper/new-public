@@ -1010,8 +1010,12 @@ svg{
   }
 
   &.active {
-    color: var(--blackText);
-    background-color: var(--yellow);
+    color: var(--white);
+    background-color: var(--yellowDark);
+
+    ::v-deep(.ui-icon) svg path {
+      fill: var(--white);
+    }
   }
 }
 

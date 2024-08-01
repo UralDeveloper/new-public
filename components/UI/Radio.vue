@@ -59,7 +59,7 @@ const isChecked = computed(() => {
     display: none;
 
     &:checked + .radio__box {
-      border-color: var(--yellow);
+      border-color: var(--yellowDark);
 
       &:after {
         opacity: 1;
@@ -84,7 +84,7 @@ const isChecked = computed(() => {
       width: 16px;
       height: 16px;
 
-      background: var(--yellow);
+      background: var(--yellowDark);
       border-radius: 50%;
 
       transition: opacity 0.3s;

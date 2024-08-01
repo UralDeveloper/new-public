@@ -3,6 +3,8 @@
 
     <ModalsChooseDiscount v-if="chooseDiscountStore.isShowChooseDiscountModal" />
 
+    <ModalsReceipt v-if="commonStore.isShowReceiptModal" />
+
     <!-- Modal Заказть торт -->
     <ModalsProduct v-if="catalogStore.selectedProductId" />
     <!-- Modal Сертификат -->
@@ -446,4 +448,5 @@
 const catalogStore = useCatalogStore()
 const cartStore = useCartStore();
 const chooseDiscountStore = useChooseDiscountStore();
+const commonStore = useCommonStore();
 </script>

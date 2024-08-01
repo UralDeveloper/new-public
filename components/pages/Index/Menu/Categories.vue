@@ -67,7 +67,7 @@
                     </button>
                     <div class="collapse navbar-collapse navbar-delivery" id="navbarNav">
                         <div class="header-row-left">
-                            <button class="btnDelivery">
+                            <button class="btnDelivery" @click.prevent="commonStore.toggleShowReceiptModal(true)">
                                 <div class="btnDelivery-icon">
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -147,6 +147,7 @@
 <script setup lang="ts">
 const catalogStore = useCatalogStore();
 const cartStore = useCartStore();
+const commonStore = useCommonStore();
 
 const route = useRoute();
 

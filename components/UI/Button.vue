@@ -75,7 +75,7 @@ const isDisabled = computed(() => {
   @include text_normal;
 
   background: none;
-  border: 0;
+  border: 1px solid #121212;
   border-radius: 14px;
 
   transition: background-color 0.3s;
@@ -92,6 +92,7 @@ const isDisabled = computed(() => {
     background: var(--yellow);
 
     &:hover {
+      color: var(--white);
       background: var(--yellowDark);
     }
 

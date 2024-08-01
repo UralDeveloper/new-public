@@ -124,11 +124,21 @@ const buttonColor = computed(() => {
 <style lang="scss" scoped>
 .modal-cart-discount-btn {
   &.active {
-    background: #fff;
-    border: 1px solid #ffce00;
+    background: var(--white);
+    border: 1px solid var(--yellowDark);
+
+    &:hover {
+      color: var(--white);
+      background: var(--yellowDark);
+    }
   }
   &:not(.active) {
-    background: #ffce00;
+    background: var(--yellow);
+
+    &:hover {
+      color: var(--white);
+      background: var(--yellowDark);
+    }
   }
   width: 100%;
   height: 35px;

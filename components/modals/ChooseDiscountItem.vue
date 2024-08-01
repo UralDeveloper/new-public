@@ -109,8 +109,12 @@ const isDiscountDisabled = computed(() => {
     height: 35px;
     font-weight: 600;
     &.disabled {
-      background: white;
-      border: 1px solid yellow;
+      background: var(--white);
+      border: 1px solid var(--yellowDark);
+
+      &:hover {
+        background: var(--yellowDark);
+      }
     }
   }
   &__remove {

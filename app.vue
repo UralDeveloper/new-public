@@ -29,15 +29,16 @@ useHead({
 })
 
 onMounted(() => {
-  if (!commonStore.selectedLocation) {
-    useChangeLocation('pickup', pickupLocations.value('pickup')[0]);
-  }
+  // if (!commonStore.selectedLocation) {
+  //   useChangeLocation('pickup', pickupLocations.value('pickup')[0]);
+  // }
 })
 
 commonStore.loadSettings();
 catalogStore.getCatalog();
 
 commonStore.getPickups();
+commonStore.getDelivery();
 commonStore.getDeliveryTimes();
 
 // commonStore.getTemplates();
@@ -69,10 +70,10 @@ commonStore.getDeliveryTimes();
   --orange: #FF6600;
   --orangeLight: #FFEFE5;
 
-  --yellow: #FEDE59;
-  --yellowLight: #FFF6CE;
+  --yellow: #fff;
+  --yellowLight: #eaeaea;
   --yellowLightSecondary: #FFF9DF;
-  --yellowDark: #FFCE00;
+  --yellowDark: #121212;
 
   --blue: #50ADCA;
 
@@ -86,13 +87,10 @@ button {
   background: none;
   border: 0;
 }
-input {
+input, textarea {
   border: 0;
 }
-p {
-  margin-bottom: 0;
-}
-ul {
+ul, p {
   padding: 0;
   margin: 0;
 }

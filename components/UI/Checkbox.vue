@@ -35,8 +35,8 @@
 
     &:checked + .checkbox {
       &__box {
-        border-color: var(--yellow);
-        background: $yellow url('@/assets/svg/checked.svg')no-repeat 50%;
+        border-color: var(--yellowDark);
+        background: var(--yellowDark) url('@/assets/svg/checked.svg')no-repeat 50%;
       }
     }
   }
