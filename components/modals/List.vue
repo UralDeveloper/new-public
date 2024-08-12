@@ -5,6 +5,8 @@
 
     <ModalsReceipt v-if="commonStore.isShowReceiptModal" />
 
+    <ModalsAuth v-if="commonStore.isShowAuthModal" />
+
     <!-- Modal Заказть торт -->
     <ModalsProduct v-if="catalogStore.selectedProductId" />
     <!-- Modal Сертификат -->

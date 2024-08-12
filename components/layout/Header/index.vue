@@ -72,7 +72,7 @@
                         </svg>
                         <span class="priceRub"> {{ cartStore.cartItemsLength }} </span>
                     </NuxtLink>
-                    <NuxtLink to="#" class="btn-profile">
+                    <NuxtLink @click="onProfileClicked" class="btn-profile">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <mask id="mask3_18867" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30"
@@ -116,6 +116,10 @@
 
 <script setup lang="ts">
 const cartStore = useCartStore();
+const commonStore = useCommonStore();
+const userStore = useUserStore();
+
+const { isAuth } = storeToRefs(userStore);
 
 const props = defineProps({
     extraClass: {
@@ -123,6 +127,15 @@ const props = defineProps({
         default: '',
     }
 })
+
+const onProfileClicked = () => {
+    if (!isAuth.value) {
+        commonStore.isShowAuthModal = true
+    }
+    else {
+        navigateTo('/lk')
+    }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -19,7 +19,7 @@ const route = useRoute();
 const routeName = computed<string | symbol>(() => route?.name || "");
 
 const extraClassForHeader = computed(() => {
-    if (['menu', 'gallery', 'order', 'order-id'].includes(routeName.value.toString())) {
+    if (['menu', 'gallery', 'order', 'order-id', 'lk', 'lk', 'lk-favorite', 'lk-promocodes', 'lk-bonuses', 'lk-referals', 'lk-orders', 'lk-notifications', 'lk-game', 'lk-preferences'].includes(routeName.value.toString())) {
         return 'dark'
     }
 })
