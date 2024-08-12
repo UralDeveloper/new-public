@@ -12,18 +12,30 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-product-info-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. </p>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat. </p>
+                            <p>{{ product.description }}</p>
                         </div>
-                        <div class="modal-product-info-footer">
-                            <div class="modal-product-info-footer-message">Заказ возможен не менее, чем за сутки</div>
-                            <div class="modal-product-info-footer-price">
-                                <span class="priceRub">{{ product.price }} ₽</span>
+                        <div class="productItem-footer" v-if="!isProductInCart">
+                            <div class="productItem-price">
+                                <span class="priceRub"> {{ product.price }} ₽</span>
                             </div>
-                            <button type="button" class="btn btn-primary btn-primary-nobg" data-bs-toggle="modal"
-                                data-bs-target="#orderOfTheCake" data-bs-dismiss="modal">Заказать</button>
+                            <NuxtLink class="btn btn-primary" @click="addToCart">Заказать</NuxtLink>
+                        </div>
+
+                        <div class="productItem-footer" v-else>
+                            <div class="productItem-price">
+                                <span class="priceRub"> {{ product.price }} ₽</span>
+                            </div>
+
+                            <div class="counter-wrapper productItem-counter productItem">
+                                <button @click="decrement" type="button"
+                                    class="counter-minus btn btn-default btn-number productItem">-</button>
+
+                                <input type="number" class="counter-value productItem" name="number" :value="count"
+                                    id="numberOfGuests">
+
+                                <button @click="increment" type="button"
+                                    class="counter-plus btn btn-default btn-number productItem">+</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -34,10 +46,68 @@
 
 <script setup lang="ts">
 const catalogStore = useCatalogStore();
+const cartStore = useCartStore();
 
 const { selectedProduct, selectedProductId } = storeToRefs(catalogStore)
+
+const { productInCart, cartItemsLength } = storeToRefs(cartStore)
 
 const product = computed(() => selectedProduct?.value())
 
 const productImage = computed(() => product?.value?.images[0])
+
+const isProductInCart = computed(() => {
+    return cartStore.cartItems.some(item => +item.id === +product.value.id)
+})
+
+const productType = computed(() => {
+  return product.value?.type
+})
+
+const count = computed(() => {
+    if (isProductInCart.value) {
+       return productInCart.value(+product.value?.id).item.count;
+    } else {
+        return 0
+    }
+})
+
+const currentProductInCart = computed(() => {
+  if (productType.value === 'simple' || 'supplements') { //supplements - temp solution
+    return productInCart.value(+product.value.id)
+  }
+
+  else if (productType.value === 'supplements' && product.value.acf.supplements) {
+    let temp = product.value.acf.supplements.some(supplement => {
+      return supplement.products && supplement.products.length > 0;
+    })
+
+    if (!temp) return productInCart.value(+product.value.id);
+  }
+
+  return {
+    idx: null,
+    item: null,
+  }
+})
+
+const increment = () => {
+    cartStore.incrementItem(currentProductInCart.value.idx)
+}
+
+const decrement = () => {
+    cartStore.decrementItem(currentProductInCart.value.idx)
+}
+
+const addToCart = () => {
+    cartStore.addToCart(product.value);
+}
 </script>
+
+<style lang="scss" scoped>
+.productItem-counter {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+}
+</style>

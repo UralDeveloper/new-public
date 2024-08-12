@@ -95,7 +95,7 @@ export default defineNuxtConfig({
     iframes: false,
     native: false,
     directiveOnly: true,
-    defaultImage: 'assets/img/default-load.gif',
+    defaultImage: '/assets/img/default-load.gif',
   },
 
   piniaPersistedstate: {

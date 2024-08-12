@@ -90,7 +90,7 @@ export const useCatalogStore = defineStore('catalogStore', {
       let url = null;
 
       if (commonStore.selectedLocation) {
-        url = `${config.public.BASE_URL}${commonStore.getCurrentLocationCatalog?.price_file_path}`;
+        // url = `${config.public.BASE_URL}${commonStore.getCurrentLocationCatalog?.price_file_path}`;
       }
       this.catalogUrl = url;
       this.getCatalog();
