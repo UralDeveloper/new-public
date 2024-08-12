@@ -13,28 +13,28 @@
       <div class="page-lk-preferences-list page-lk-preferences__list">
         <div class="page-lk-preferences-list__item">
           <div class="page-lk-preferences-list__value">
-            <img src="@/assets/images/products/broccoli.png" alt="">
+            <img src="@/assets/img/products/broccoli.png" alt="">
             Я вегетарианец
           </div>
           <UISwitcher />
         </div>
         <div class="page-lk-preferences-list__item">
           <div class="page-lk-preferences-list__value">
-            <img src="@/assets/images/products/garlic.png" alt="">
+            <img src="@/assets/img/products/garlic.png" alt="">
             Не ем чеснок
           </div>
           <UISwitcher />
         </div>
         <div class="page-lk-preferences-list__item">
           <div class="page-lk-preferences-list__value">
-            <img src="@/assets/images/products/onion.png" alt="">
+            <img src="@/assets/img/products/onion.png" alt="">
             Не ем лук
           </div>
           <UISwitcher />
         </div>
         <div class="page-lk-preferences-list__item">
           <div class="page-lk-preferences-list__value">
-            <img src="@/assets/images/products/hot-pepper.png" alt="">
+            <img src="@/assets/img/products/hot-pepper.png" alt="">
             Нельзя острое
           </div>
           <UISwitcher />
