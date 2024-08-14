@@ -1,8 +1,11 @@
 <template>
-    <div class="header header-desctop header-desctop-delivery header-blur header-dark">
-        <div class="header-row-main">
-            <div class="container">
-                <div class="header-row-left">
+    <ModalsOverlay :is-show="isShow" position="right" :offset="0" name="cart"
+        @close="commonStore.toggleShowMobileMenu(false)">
+        <div class="mobile-menu">
+            <div class="gray-bg"></div>
+
+            <div class="mobile-menu__content">
+                <div class="mobile-menu__header">
                     <div class="header-logo">
                         <NuxtLink to="/">
                             <svg width="133.150635" height="48.000000" viewBox="0 0 133.151 48" fill="none"
@@ -39,172 +42,633 @@
                                         fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
                                 </g>
                             </svg>
-
                         </NuxtLink>
                     </div>
+
+                    <a class="mobile-menu__close" @click.prevent="closeModal()">
+                        <UIIcon name="close" />
+                    </a>
                 </div>
-                <div class="header-row-center">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/">Главная</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="#">Бонусная карта</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/products">Идеально для подарка</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/menu">Меню</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink></li>
-                    </ul>
+
+                <div v-if="!userStore.isAuth" class="mobile-menu-auth">
+                    <p class="mobile-menu-auth__title">
+                        Войдите в личный кабинет
+                    </p>
+                    <p class="mobile-menu-auth__description">
+                        Чтобы пользоваться бонусной системой и получать персональные предложения
+                    </p>
+                    <UIButton color="yellow" class="mobile-menu-auth__button"
+                        @click.prevent="commonStore.toggleShowAuthModal(true)">
+                        <UIIcon name="person" />
+                        Войти
+                    </UIButton>
                 </div>
-                <div class="header-row-right">
-                    <NuxtLink to="#" class="btn btn-primary">Выйти</NuxtLink>
-                </div>
-            </div>
-        </div>
-        <div class="header-row-nav">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <div class="collapse navbar-collapse navbar-delivery" id="navbarNav">
-                        <div class="header-row-left" v-if="!isMediumLarge">
-                            <button class="btnDelivery" @click.prevent="commonStore.toggleShowReceiptModal(true)">
-                                <div class="btnDelivery-icon">
-                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <mask id="mask0_1689_9964" style="mask-type:alpha" maskUnits="userSpaceOnUse"
-                                            x="0" y="0" width="24" height="25">
-                                            <rect y="0.5" width="24" height="24" fill="#D9D9D9" />
-                                        </mask>
-                                        <g mask="url(#mask0_1689_9964)">
-                                            <path
-                                                d="M12 20.0135C13.9564 18.2622 15.4535 16.5824 16.4913 14.974C17.5291 13.3657 18.048 11.957 18.048 10.7481C18.048 8.92498 17.4689 7.42627 16.3105 6.2519C15.1522 5.07753 13.7153 4.49035 12 4.49035C10.2846 4.49035 8.84771 5.07753 7.68938 6.2519C6.53105 7.42627 5.95188 8.92498 5.95188 10.7481C5.95188 11.957 6.47079 13.3657 7.5086 14.974C8.54644 16.5824 10.0436 18.2622 12 20.0135ZM12 21.4403C11.8051 21.4403 11.6102 21.4067 11.4154 21.3394C11.2205 21.2721 11.0442 21.1679 10.8865 21.0269C9.98909 20.2 9.14935 19.3484 8.3673 18.4721C7.58525 17.5958 6.90545 16.7199 6.32788 15.8442C5.75031 14.9686 5.29326 14.1006 4.95673 13.2404C4.62018 12.3801 4.4519 11.5493 4.4519 10.7481C4.4519 8.44038 5.19838 6.57213 6.69133 5.14328C8.18426 3.71443 9.9538 3 12 3C14.0461 3 15.8156 3.71443 17.3086 5.14328C18.8015 6.57213 19.548 8.44038 19.548 10.7481C19.548 11.5493 19.3797 12.3785 19.0432 13.2356C18.7066 14.0926 18.2512 14.9606 17.6768 15.8394C17.1025 16.7183 16.4243 17.5942 15.6422 18.4673C14.8602 19.3404 14.0204 20.1903 13.123 21.0173C12.9676 21.1583 12.791 21.2641 12.5933 21.3346C12.3955 21.4051 12.1977 21.4403 12 21.4403ZM12.0017 12.3654C12.4992 12.3654 12.9246 12.1882 13.2778 11.8339C13.631 11.4795 13.8076 11.0536 13.8076 10.556C13.8076 10.0584 13.6305 9.633 13.2761 9.2798C12.9218 8.9266 12.4958 8.75 11.9983 8.75C11.5007 8.75 11.0753 8.92717 10.7221 9.2815C10.3689 9.63583 10.1923 10.0618 10.1923 10.5594C10.1923 11.057 10.3694 11.4824 10.7238 11.8356C11.0781 12.1888 11.5041 12.3654 12.0017 12.3654Z"
-                                                fill="white" />
-                                        </g>
-                                    </svg>
+
+                <PagesLkUserBlock v-else is-mobile-menu />
+
+
+                <PagesLkNavigation v-if="userStore.isAuth" style="margin-bottom: 30px;" is-mobile-menu
+                    @click="close()" />
+
+                <div class="info__col info__about-menu">
+                    <div class="c">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container">
+                                <div class="navbar" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link active" to="/menu">Меню</NuxtLink>
+                                        </li>
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/delivery">Доставка</NuxtLink>
+                                        </li>
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="#">Бонусная карта</NuxtLink>
+                                        </li>
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/gifts">Сертификаты</NuxtLink>
+                                        </li>
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/products">Торты на заказ</NuxtLink>
+                                        </li>
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/events">Мероприятия</NuxtLink>
+                                        </li>
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/halls">Банкетные залы</NuxtLink>
+                                        </li>
+                                        <li class="nav-item">
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/gallery">Галерея</NuxtLink>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="btnDelivery-content">
-                                    <span>Как хотите получить заказ?</span>
-                                    <span>Выберите способ получения</span>
-                                </div>
-                                <div class="btnDelivery-icon">
-                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="#fff"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g mask="url(#mask0_1689_9970)">
-                                            <path
-                                                d="M16.6116 13.2508H5.25C5.03718 13.2508 4.85898 13.179 4.7154 13.0354C4.5718 12.8919 4.5 12.7137 4.5 12.5008C4.5 12.288 4.5718 12.1098 4.7154 11.9662C4.85898 11.8227 5.03718 11.7509 5.25 11.7509H16.6116L13.3192 8.45851C13.1705 8.30979 13.0971 8.13576 13.099 7.93641C13.1009 7.73706 13.1743 7.55982 13.3192 7.40468C13.4743 7.24957 13.6525 7.16944 13.8538 7.16431C14.0551 7.15918 14.2333 7.23418 14.3884 7.38931L18.8672 11.8682C18.9608 11.9617 19.0269 12.0605 19.0653 12.1643C19.1038 12.2681 19.123 12.3803 19.123 12.5008C19.123 12.6214 19.1038 12.7335 19.0653 12.8374C19.0269 12.9412 18.9608 13.0399 18.8672 13.1335L14.3884 17.6124C14.2397 17.7611 14.0631 17.8345 13.8586 17.8326C13.6541 17.8306 13.4743 17.7521 13.3192 17.597C13.1743 17.4419 13.0993 17.2662 13.0942 17.0701C13.0891 16.8739 13.1641 16.6983 13.3192 16.5432L16.6116 13.2508Z"
-                                                fill="white" />
-                                        </g>
-                                    </svg>
-                                </div>
-                            </button>
-                        </div>
-                        <ul class="navbar-nav">
-                            <li class="nav-item" v-for="item in menu" :key="item.id">
-                                <NuxtLink class="nav-link" :class="{'active': isActiveCategory(item)}" :to="`/delivery/${item.id}`">
-                                    {{ item.name }}
-                                </NuxtLink>
-                            </li>
-                        </ul>
-                        <div class="header-row-right">
-                            <NuxtLink @click.prevent="cartStore.toggleShowCartModal(true)" class="btn-cart">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <mask id="mask3_18862" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000"
-                                        y="0.000000" width="30" height="30">
-                                        <rect id="Bounding box" width="30" height="30" fill="#D9D9D9" />
-                                    </mask>
-                                    <g mask="url(#mask3_18862)">
-                                        <path id="Icon"
-                                            d="M7.88477 26.8749C7.25342 26.8749 6.71875 26.6562 6.28125 26.2187C5.84375 25.7812 5.625 25.2467 5.625 24.6153L5.625 10.3846C5.625 9.75321 5.84375 9.21875 6.28125 8.78125C6.71875 8.34375 7.25342 8.125 7.88477 8.125L10.3125 8.125L10.3125 7.8125C10.3125 6.51762 10.77 5.41266 11.6851 4.4976C12.6001 3.58253 13.7051 3.125 15 3.125C16.2949 3.125 17.3999 3.58253 18.3149 4.4976C19.23 5.41266 19.6875 6.51762 19.6875 7.8125L19.6875 8.125L22.1152 8.125C22.7466 8.125 23.2812 8.34375 23.7188 8.78125C24.1562 9.21875 24.375 9.75321 24.375 10.3846L24.375 24.6153C24.375 25.2467 24.1562 25.7812 23.7188 26.2187C23.2812 26.6562 22.7466 26.8749 22.1152 26.8749L7.88477 26.8749ZM7.88477 25L22.1152 25C22.2114 25 22.2998 24.9599 22.3799 24.8798C22.46 24.7996 22.5 24.7115 22.5 24.6153L22.5 10.3846C22.5 10.2885 22.46 10.2003 22.3799 10.1202C22.2998 10.04 22.2114 9.99997 22.1152 9.99997L19.6875 9.99997L19.6875 12.8125C19.6875 13.0785 19.5977 13.3013 19.4185 13.4808C19.2388 13.6602 19.0161 13.75 18.75 13.75C18.4839 13.75 18.2612 13.6602 18.0815 13.4808C17.9023 13.3013 17.8125 13.0785 17.8125 12.8125L17.8125 9.99997L12.1875 9.99997L12.1875 12.8125C12.1875 13.0785 12.0977 13.3013 11.9185 13.4808C11.7388 13.6602 11.5161 13.75 11.25 13.75C10.9839 13.75 10.7612 13.6602 10.5815 13.4808C10.4023 13.3013 10.3125 13.0785 10.3125 12.8125L10.3125 9.99997L7.88477 9.99997C7.78857 9.99997 7.7002 10.04 7.62012 10.1202C7.54004 10.2003 7.5 10.2885 7.5 10.3846L7.5 24.6153C7.5 24.7115 7.54004 24.7996 7.62012 24.8798C7.7002 24.9599 7.78857 25 7.88477 25ZM12.1875 8.125L17.8125 8.125L17.8125 7.8125C17.8125 7.02883 17.5396 6.36417 16.9941 5.8185C16.4482 5.27281 15.7837 4.99997 15 4.99997C14.2163 4.99997 13.5518 5.27281 13.0059 5.8185C12.4604 6.36417 12.1875 7.02883 12.1875 7.8125L12.1875 8.125Z"
-                                            fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
-                                    </g>
-                                </svg>
-                                <span class="priceRub">{{ cartStore.cartItemsLength }}</span>
-                            </NuxtLink>
-                            <NuxtLink to="#" class="btn-profile">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <mask id="mask3_18867" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0"
-                                        width="30" height="30">
-                                        <rect id="Bounding box" width="30" height="30" fill="#D9D9D9"
-                                            fill-opacity="1" />
-                                    </mask>
-                                    <g mask="url(#mask3_18867)">
-                                        <path id="person"
-                                            d="M15 14.6153C13.7969 14.6153 12.7671 14.187 11.9102 13.3302C11.0532 12.4734 10.625 11.4435 10.625 10.2404C10.625 9.03726 11.0532 8.00732 11.9102 7.15057C12.7671 6.2938 13.7969 5.86542 15 5.86542C16.2031 5.86542 17.2329 6.2938 18.0898 7.15057C18.9468 8.00732 19.375 9.03726 19.375 10.2404C19.375 11.4435 18.9468 12.4734 18.0898 13.3302C17.2329 14.187 16.2031 14.6153 15 14.6153ZM22.4761 24.1345L7.52393 24.1345C6.99658 24.1345 6.54834 23.9498 6.1792 23.5805C5.80957 23.2111 5.625 22.7628 5.625 22.2355L5.625 21.3557C5.625 20.7436 5.7915 20.1767 6.12402 19.655C6.45654 19.1334 6.90088 18.7324 7.45654 18.4519C8.69238 17.8461 9.93848 17.3918 11.1958 17.089C12.4531 16.7861 13.7212 16.6346 15 16.6346C16.2788 16.6346 17.5469 16.7861 18.8042 17.089C20.061 17.3918 21.3076 17.8461 22.5435 18.4519C23.0991 18.7324 23.5435 19.1334 23.876 19.655C24.2085 20.1767 24.375 20.7436 24.375 21.3557L24.375 22.2355C24.375 22.7628 24.1904 23.2111 23.8208 23.5805C23.4517 23.9498 23.0029 24.1345 22.4761 24.1345ZM7.5 22.2596L22.5 22.2596L22.5 21.3557C22.5 21.1025 22.4268 20.8681 22.2798 20.6526C22.1333 20.4371 21.9341 20.2612 21.6826 20.125C20.606 19.5945 19.5078 19.1927 18.3882 18.9194C17.269 18.6462 16.1396 18.5096 15 18.5096C13.8604 18.5096 12.731 18.6462 11.6118 18.9194C10.4922 19.1927 9.39404 19.5945 8.31738 20.125C8.06592 20.2612 7.8667 20.4371 7.71973 20.6526C7.57324 20.8681 7.5 21.1025 7.5 21.3557L7.5 22.2596ZM15 12.7404C15.6875 12.7404 16.2759 12.4956 16.7656 12.006C17.2554 11.5164 17.5 10.9279 17.5 10.2404C17.5 9.55289 17.2554 8.96435 16.7656 8.47476C16.2759 7.98518 15.6875 7.74039 15 7.74039C14.3125 7.74039 13.7241 7.98518 13.2344 8.47476C12.7446 8.96435 12.5 9.55289 12.5 10.2404C12.5 10.9279 12.7446 11.5164 13.2344 12.006C13.7241 12.4956 14.3125 12.7404 15 12.7404Z"
-                                            fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
-                                    </g>
-                                </svg>
-                            </NuxtLink>
-                        </div>
+                            </div>
+                        </nav>
                     </div>
                 </div>
-            </nav>
+
+
+            </div>
+
+            
+
         </div>
-    </div>
+    </ModalsOverlay>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { useCommonStore } from '@/store/common';
+import { useCatalogStore } from "@/store/catalog";
+
 const catalogStore = useCatalogStore();
-const cartStore = useCartStore();
-const commonStore = useCommonStore();
+const commonStore = useCommonStore()
 
-const route = useRoute();
+const { isMobileOrTablet } = storeToRefs(commonStore)
 
-const { categories } = storeToRefs(catalogStore);
+const appTitle = commonStore?.titleDescription?.name
 
-const menu = computed(() => categories?.value?.find(item => +item.id === 210)?.subCategories);
+const isShow = ref(true)
+const config = useRuntimeConfig()
 
-const isMediumLarge = ref(false);
+const userStore = useUserStore()
 
-const isActiveCategory = (category:object) => {
-    return (route.params?.id && +route.params?.id === category?.id);
+const emits = defineEmits(['close', 'auth'])
+
+// Methods
+const close = () => {
+    document.body.classList.remove('overflow-hidden')
+
+    commonStore.toggleShowMobileMenu(false);
 }
 
-onMounted(() => {
+const auth = () => {
+    emits('auth')
 
-    if (process.client) {
-        nextTick(() => {
-            isMediumLarge.value = window.innerWidth <= 992;
+    close()
+}
 
-            window.addEventListener('resize', (() => {
-                isMediumLarge.value = window.innerWidth <= 992;
-            }))
-        })
-    }
-})
+const phone = computed(() => commonStore.getPhone)
+
+const Telegramm = computed(() => commonStore.contacts["telegram-link"])
+const WatsApp = computed(() => commonStore.contacts["whatsapp-link"])
+const VkLink = computed(() => commonStore.contacts["vk-link"])
+const FbkLink = computed(() => commonStore.contacts["fb-link"])
+const InstLink = computed(() => commonStore.contacts["inst-link"])
+
+const TimeDay = computed(() => commonStore.getWorkTime)
+
+const closeModal = () => {
+    isShow.value = false
+}
+
 </script>
 
 <style lang="scss" scoped>
-.header-row-center {
-    @include maq($bp-medium) {
-        display: none;
+.search {
+    width: calc(100% - 30px);
+    margin: auto;
+}
+
+.ui-icon-person {
+    ::v-deep svg path {
+        fill: $white;
     }
 }
-.navbar-nav {
-    overflow-x: hidden;
+
+.footer__bottom {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding-top: 16px;
+
+    color: #969696;
+
+    border-top: 1px solid #D9D9D9;
+
+    @include mq($bp-medium) {
+        margin-top: 50px;
+        padding-top: 22px;
+    }
+
+    @include maq($bp-small) {
+        display: flex;
+        margin-bottom: 70px;
+    }
+
+    .lf-copyright {
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap;
+        align-items: center;
+        @include text_normal;
+    }
+}
+
+.mobile-menu {
+    position: relative;
+
+    background: url('@/assets/img/footer.jpg');
+
+    width: 100vw;
+    max-width: 512px;
+    height: 100vh;
 
     display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
 
-    overflow:hidden;
+    padding: 0 20px;
 
-    gap: 20px;
+    overflow-y: auto;
+    z-index: 2000;
 
-    @include maq($bp-medium) {
-        overflow-x: scroll !important;
+    & * {
+        z-index: 50;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+        margin-top: 97px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 20px;
+    }
+
+    &__header {
+        width: 100vw;
+        max-width: 512px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 0;
+
+        right: 0;
+
+        z-index: 100;
+
+        // @include mq($bp-small-medium) {
+        //   width: 97%;
+        // }
+
+        // @include mq($bp-small) {
+        //   width: 96%;
+        // }
+
+        // @include mq($bp-medium) {
+        //   max-width: 470px;
+        //   width: 100%;
+        //   left: auto;
+        //   right: 15px;
+        //   padding: 20px 0px;
+        // }
+
+        position: fixed;
+        margin: auto;
+
+        padding: 20px 20px;
+
+        border-bottom: 1px solid var(--grayText2);
+
+        backdrop-filter: blur(10px);
+        /* 
+        $bp-extra-small: 320px;
+        $bp-super-small: 480px;
+        $bp-small-medium: 549px;
+        $bp-small: 767px;
+        $bp-medium: 991px;
+      */
+    }
+
+    &__close {
+        :hover {
+            cursor: pointer;
+        }
+
+        ::v-deep(.ui-icon) svg {
+            width: 30px;
+            height: 30px;
+
+            path {
+                fill: var(--white);
+            }
+        }
+    }
+
+    &__info {
+        flex: 0 0 auto;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 20px 0 40px 25px;
+    }
+
+    &__phone {
+        @include text_large;
+        font-weight: 700;
+
+        margin-bottom: 10px;
+    }
+
+    &__time {
+        display: flex;
+        align-items: center;
+        grid-gap: 10px;
+
+        margin-bottom: 20px;
+
+        @include text_normal;
+        font-weight: 600;
+        color: var(--grayText);
+    }
+
+    &__label {
+        @include text_big;
+        font-weight: 600;
+        color: var(--grayText2);
+
+        margin-bottom: 20px;
     }
 }
-.navbar-expand-lg {
-    
+
+.gray-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #262523F0;
+    z-index: 2;
 }
-.navbar-delivery {
-    @include maq($bp-medium) {
-        overflow-x: scroll !important;
-    }
+
+.mobile-menu-logo {
+    width: 134px;
+    height: 30px;
 }
-.btnDelivery {
-    @include maq($bp-medium) {
+
+.mobile-menu-auth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 20px 30px;
+
+    color: var(--white);
+
+    @include mq($bp-medium) {
         display: none;
     }
+
+    border-radius: 20px;
+
+    &__title {
+        margin-bottom: 6px;
+
+        @include text_big;
+        font-weight: 600;
+    }
+
+    &__description {
+        margin-bottom: 16px;
+
+        @include text_small;
+        font-weight: 500;
+    }
+
+    &__button {
+        font-weight: 500;
+
+        background: none;
+
+        border: 1px solid var(--white);
+
+        color: var(--white);
+
+        :deep svg path {
+            fill: var(--white);
+        }
+    }
 }
 
-.nav-link {
-    text-wrap: nowrap;
+.nav {
+    &-item {
+        font-family: 'Vela Sans';
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 28.69px;
+        text-align: left;
+
+        & a {
+            color: var(--white);
+        }
+    }
+}
+
+.navbar-nav {
+    gap: 20px;
+}
+</style>
+<style lang="scss" scoped>
+.info {
+    padding: 40px 0;
+
+    @include mq($bp-medium) {
+        padding: 70px 0 40px;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__about-menu {
+        margin-bottom: 40px;
+
+        &_title {
+            margin-bottom: 20px;
+            margin-left: 30px;
+
+            color: #000;
+
+            @include text_big;
+
+            font-size: 24px;
+            font-weight: 700;
+
+            @include mq($bp-medium) {
+                @include text_large;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 30px;
+        position: relative;
+
+
+        @include mq($bp-medium) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            grid-gap: 0;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        grid-gap: 30px;
+
+        @include mq($bp-super-small) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include mq($bp-medium) {
+            grid-gap: 120px;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__phone {
+        margin-bottom: 9px;
+
+        @include text_large;
+        font-weight: 700;
+
+        @include mq($bp-medium) {
+            @include h2;
+        }
+    }
+
+    &__time {
+        display: flex;
+        align-items: center;
+        grid-gap: 10px;
+
+        color: var(--grayText);
+        @include text_normal;
+        font-weight: 600;
+
+        @include mq($bp-medium) {
+            @include text_big;
+
+            padding-left: 4px;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+
+        color: var(--grayText2);
+        font-weight: 500;
+
+        @include text_big;
+        font-size: 20px;
+
+        @include mq($bp-medium) {
+            @include text_large;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    &__apps {
+        display: flex;
+        grid-gap: 20px;
+
+        @include mq($bp-super-small) {
+            flex-direction: row;
+            align-items: flex-start;
+            grid-gap: 30px;
+        }
+
+        @include maq(410px) {
+            margin-left: -30px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        grid-gap: 40px;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 30px;
+        padding-top: 16px;
+
+        border-top: 1px solid #D9D9D9;
+
+        @include mq($bp-medium) {
+            margin-top: 50px;
+            padding-top: 22px;
+        }
+
+        .lf-copyright {
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap;
+            align-items: center;
+            @include text_normal;
+        }
+    }
+
+    &__copy {
+        color: var(--grayText);
+
+        @include text_small;
+
+        @include mq($bp-medium) {
+            //@include text_big;
+            @include text_normal;
+        }
+    }
+
+    //&__to-top {
+    //  flex: 0 0 auto;
+    //
+    //  display: flex;
+    //  align-items: center;
+    //  justify-content: center;
+    //
+    //  width: 44px;
+    //  height: 44px;
+    //  background: var(--orange);
+    //  border-radius: 50%;
+    //
+    //  position: absolute;
+    //  bottom: 70px;
+    //  right: 15px;
+    //
+    //  .ui-icon {
+    //    transform: rotate(-90deg);
+    //    ::v-deep svg path{
+    //      fill: var(--white);
+    //    }
+    //  }
+    //}
+}
+
+.info-menu {
+    display: grid;
+
+
+    &--double {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__link {
+        padding: 13px 5px 13px 30px;
+
+        border-bottom: 1px solid #F5F4F2;
+
+        &:hover {
+            border-color: #F2A32C;
+        }
+
+        display: block;
+
+        @include text_small;
+
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+.info-app {
+    display: flex;
+    align-items: center;
+    grid-gap: 15px;
+    max-width: 177px;
+    width: 100%;
+    padding: 5px 20px;
+
+    background: var(--white);
+    border-radius: 14px;
+
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        @include text_mini;
+    }
+
+    &__value {
+        @include text_normal;
+        font-weight: 600;
+
+        white-space: nowrap;
+    }
 }
 </style>

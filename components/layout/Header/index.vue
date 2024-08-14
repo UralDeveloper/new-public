@@ -55,7 +55,7 @@
                 </div>
                 <div class="header-row-right">
                     <NuxtLink data-bs-toggle="modal" data-bs-target="#bookingModal"
-                        class="btn btn-white btn-white-nobg">Забронировать стол</NuxtLink>
+                        class="btn btn-white btn-white-nobg header-stol">Забронировать стол</NuxtLink>
                     <!-- <NuxtLink to="#" class="btn btn-primary btn-primary-nobg">Забронировать стол</NuxtLink> -->
                     <NuxtLink @click.prevent="cartStore.toggleShowCartModal(true)" class="btn-cart">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -86,6 +86,8 @@
                             </g>
                         </svg>
                     </NuxtLink>
+
+                    <UIIcon class="header-burger" name="burger" @click.prevent="commonStore.toggleShowMobileMenu(true)" />
                 </div>
             </div>
         </div>
@@ -144,5 +146,36 @@ const onProfileClicked = () => {
     left: 0;
     right: 0;
     top: 0;
+    
+    &-burger {
+        display: none !important;
+    }
+
+
+    @include maq($bp-medium) {
+        &-contacts {
+            display: none;
+        }
+
+        &-stol {
+            display: none !important;
+        }
+
+        &-row-nav {
+            display: none;
+        }
+
+        &-burger {
+            display: block !important;
+
+            :deep svg path {
+                fill: var(--white);
+            }
+        }
+
+        .btn-profile {
+            display: none;
+        }
+    }
 }
 </style>

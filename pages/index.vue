@@ -177,3 +177,62 @@ watchEffect(() => {
     })
 })
 </script>
+
+<style lang="scss" scoped>
+.footerMap {
+
+    position: relative;
+
+    @include maq($bp-big) {
+
+        &-contacts {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    @include maq($bp-small) {
+        height: 400px;
+        margin-top: 500px;
+        
+        &-contacts {
+            top: -450px;
+            width: calc(100vw - 30px);
+
+            padding: 40px 20px;
+
+            gap: 30px;
+
+            &-blockTitle {
+                font-size: 32px;
+            }
+
+            &-title {
+                font-size: 14px;
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &-info {
+                
+                & a, span {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &-map {
+            height: 400px;
+
+            & iframe {
+                height: 400px;
+            }
+        }
+    }
+}
+</style>

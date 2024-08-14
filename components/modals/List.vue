@@ -7,6 +7,8 @@
 
     <ModalsAuth v-if="commonStore.isShowAuthModal" />
 
+    <ModalsHeaderBurgerMenu v-if="commonStore.isShowMobileMenu" />
+
     <!-- Modal Заказть торт -->
     <ModalsProduct v-if="catalogStore.selectedProductId" />
     <!-- Modal Сертификат -->
