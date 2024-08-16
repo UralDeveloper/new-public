@@ -337,7 +337,7 @@ const appTitle = commonStore?.titleDescription?.name
     //
     //  .ui-icon {
     //    transform: rotate(-90deg);
-    //    ::v-deep svg path{
+    //    :deep svg path{
     //      fill: $white;
     //    }
     //  }

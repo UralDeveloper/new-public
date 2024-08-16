@@ -500,7 +500,7 @@ setDefault()
       width: 20px;
       height: 20px;
 
-      ::v-deep svg path {
+      :deep svg path {
         fill: var(--grayText);
       }
     }
@@ -551,7 +551,7 @@ setDefault()
       width: 18px;
       height: 18px;
 
-      ::v-deep svg path {
+      :deep svg path {
         fill: var(--orange);
       }
     }
@@ -574,7 +574,7 @@ setDefault()
   }
 
   &__textarea {
-    ::v-deep textarea {
+    :deep textarea {
       height: 80px;
     }
   }
@@ -725,7 +725,7 @@ setDefault()
     //}
     .modal-receipt-addresses-item {
       &__icon {
-        ::v-deep(.ui-icon) svg path {
+        :deep(.ui-icon) svg path {
           fill: #383838;
         }
       }
@@ -735,7 +735,7 @@ setDefault()
       }
 
       &__edit {
-        ::v-deep(.ui-icon) svg path {
+        :deep(.ui-icon) svg path {
           fill: var(--blackText3);
         }
       }

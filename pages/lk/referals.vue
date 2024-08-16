@@ -202,7 +202,7 @@ getReferals()
   }
 
   &__icon {
-    ::v-deep svg {
+    :deep svg {
       width: 32px;
       height: 32px;
       
@@ -230,7 +230,7 @@ getReferals()
   &__button {
     font-weight: 500;
 
-    &::v-deep span svg path {
+    &:deep span svg path {
       fill: $white;
     }
   }

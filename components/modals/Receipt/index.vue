@@ -212,7 +212,7 @@ setDefault()
       }
     }
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
 
@@ -310,7 +310,7 @@ setDefault()
 
   transition: background-color 0.3s, color 0.3s;
 
-  ::v-deep(.ui-icon) svg {
+  :deep(.ui-icon) svg {
     width: 15px;
     height: 15px;
   }
@@ -321,7 +321,7 @@ setDefault()
     @include text_normal;
     font-weight: 600;
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
     }
@@ -335,7 +335,7 @@ setDefault()
     color: var(--white);
     background-color: var(--yellowDark);
 
-    ::v-deep(.ui-icon) svg path {
+    :deep(.ui-icon) svg path {
       fill: var(--white);
     }
   }

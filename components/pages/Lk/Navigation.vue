@@ -132,7 +132,7 @@ const goTo = (link) => {
 
     .lk-navigation-link {
       &__icon {
-        ::v-deep svg path {
+        :deep svg path {
           fill: var(--orange);
         }
       }
@@ -140,7 +140,7 @@ const goTo = (link) => {
       &__arrow {
         transform: rotate(180deg);
 
-        ::v-deep svg path {
+        :deep svg path {
           fill: var(--blackText);
         }
       }
@@ -154,7 +154,7 @@ const goTo = (link) => {
   }
 
   &__icon {
-    ::v-deep svg path {
+    :deep svg path {
       fill: var(--grayText2);
     }
   }
@@ -168,7 +168,7 @@ const goTo = (link) => {
   &__arrow {
     transition: transform 0.3s;
 
-    ::v-deep svg path {
+    :deep svg path {
       fill: var(--grayText2);
     }
   }

@@ -315,7 +315,7 @@ getOrder()
 </script>
 
 <style lang="scss" scoped>
-::v-deep(.ruble-icon) svg path {
+:deep(.ruble-icon) svg path {
   fill: $white;
 }
 .page-order-info {
@@ -378,7 +378,7 @@ getOrder()
       background: $red;
     }
 
-    ::v-deep(.ui-icon) svg path {
+    :deep(.ui-icon) svg path {
       fill: var(--white);
     }
 
@@ -386,17 +386,17 @@ getOrder()
       height: 35px;
       width: 35px;
 
-      ::v-deep(.ui-icon) svg {
+      :deep(.ui-icon) svg {
         width: 35px;
         height: 35px;   
         
       }
-      ::v-deep(.ui-icon) svg path {
+      :deep(.ui-icon) svg path {
         width: 35px;
         height: 35px;   
         
       }
-      ::v-deep(.ui-icon) svg mask {
+      :deep(.ui-icon) svg mask {
         width: 35px;
         height: 35px;   
         
@@ -407,17 +407,17 @@ getOrder()
       height: 30px;
       width: 30px;
 
-      ::v-deep(.ui-icon) svg {
+      :deep(.ui-icon) svg {
         width: 30px;
         height: 30px;   
         
       }
-      ::v-deep(.ui-icon) svg path {
+      :deep(.ui-icon) svg path {
         width: 30px;
         height: 30px;   
         
       }
-      ::v-deep(.ui-icon) svg mask {
+      :deep(.ui-icon) svg mask {
         width: 30px;
         height: 30px;   
         

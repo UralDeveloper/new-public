@@ -147,7 +147,7 @@ const submit = () => {
       width: 20px;
       height: 20px;
 
-      ::v-deep svg path {
+      :deep svg path {
         fill: var(--grayText);
       }
     }
@@ -187,7 +187,7 @@ const submit = () => {
   }
 
   &__input {
-    ::v-deep input {
+    :deep input {
       padding-left: 52px;
     }
   }
@@ -203,7 +203,7 @@ const submit = () => {
   &.active {
     .modal-receipt-pickup-item {
       &__icon {
-        ::v-deep svg path {
+        :deep svg path {
           fill: var(--green);
         }
       }
@@ -224,7 +224,7 @@ const submit = () => {
     width: 24px;
     height: 24px;
 
-    ::v-deep svg path {
+    :deep svg path {
       fill: var(--grayText2);
     }
   }

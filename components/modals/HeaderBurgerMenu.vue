@@ -170,7 +170,7 @@ const closeModal = () => {
 }
 
 .ui-icon-person {
-    ::v-deep svg path {
+    :deep svg path {
         fill: $white;
     }
 }
@@ -287,7 +287,7 @@ const closeModal = () => {
             cursor: pointer;
         }
 
-        ::v-deep(.ui-icon) svg {
+        :deep(.ui-icon) svg {
             width: 30px;
             height: 30px;
 
@@ -609,7 +609,7 @@ const closeModal = () => {
     //
     //  .ui-icon {
     //    transform: rotate(-90deg);
-    //    ::v-deep svg path{
+    //    :deep svg path{
     //      fill: var(--white);
     //    }
     //  }

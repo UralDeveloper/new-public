@@ -156,7 +156,7 @@ const accept = () => {
   }
 
   &__close {
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
 

@@ -265,7 +265,7 @@ const onSubmit = () => {
   }
 
   &__close {
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
 
@@ -345,7 +345,7 @@ const onSubmit = () => {
     font-weight: 500;
     color: var(--red);
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 16px;
       height: 16px;
 
@@ -373,7 +373,7 @@ const onSubmit = () => {
   }
 }
 
-::v-deep .vue-tel-input {
+:deep .vue-tel-input {
   grid-gap: 10px;
 
   background: none;

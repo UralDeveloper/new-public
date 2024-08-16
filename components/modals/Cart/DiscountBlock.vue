@@ -164,7 +164,7 @@ const buttonColor = computed(() => {
     top: 15px;
     right: 10px;
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 18px;
       height: 18px;
 

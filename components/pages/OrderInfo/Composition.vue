@@ -235,7 +235,7 @@ const itemsList = computed(() => {
     &--bonuses {
       grid-gap: 6px;
 
-      ::v-deep(.ui-icon) svg path {
+      :deep(.ui-icon) svg path {
         fill: var(--orange);
       }
     }

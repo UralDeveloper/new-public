@@ -30,12 +30,12 @@ response.value = data?.value || null;
       width: 100%;
   }
 
-  ::v-deep(.canvas-wrapper) {
+  :deep(.canvas-wrapper) {
     max-width: 400px;
     width: 100%;
   }
 
-  ::v-deep(.week-days) {
+  :deep(.week-days) {
     width: 80%;
 
     @include maq($bp-big) {
@@ -43,7 +43,7 @@ response.value = data?.value || null;
     }
   }
 
-  ::v-deep(.week-days-wrapper) {
+  :deep(.week-days-wrapper) {
     @include maq($bp-super-small) {
       height: 100px;
     }

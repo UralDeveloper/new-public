@@ -150,13 +150,13 @@ const openBurgerCatMenu = () => {
 
   &__icon {
     &--cart {
-      ::v-deep svg path {
+      :deep svg path {
         stroke: var(--yellow);
       }
     }
 
     &--delivery {
-      ::v-deep svg path {
+      :deep svg path {
         fill: var(--grayText);
       }
     }
@@ -197,7 +197,7 @@ const openBurgerCatMenu = () => {
     background: var(--blackText3);
   box-shadow: 0px -2px 80px 0px rgba(0, 0, 0, 0.2);
     border-radius: 14px;
-  ::v-deep svg path {
+  :deep svg path {
     fill: var(--white);
   }
 }

@@ -417,7 +417,7 @@ setDefault()
   &__textarea {
     font-weight: 500;
 
-    ::v-deep textarea {
+    :deep textarea {
       height: 80px;
     }
   }

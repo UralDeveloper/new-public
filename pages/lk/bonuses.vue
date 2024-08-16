@@ -309,7 +309,7 @@ getBalance()
     align-items: center;
     grid-gap: 12px;
 
-    ::v-deep(.ui-icon) svg path {
+    :deep(.ui-icon) svg path {
       fill: var(--yellow);
     }
 

@@ -183,7 +183,7 @@ const decrement = () => {
 
 <style lang="scss" scoped>
 .add-button {
-    ::v-deep(.counter__button) {
+    :deep(.counter__button) {
         padding: 6px;
     }
 }

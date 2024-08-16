@@ -182,7 +182,7 @@ setDefault()
   }
 
   &__input {
-    ::v-deep input {
+    :deep input {
       padding-left: 52px;
     }
   }
@@ -201,7 +201,7 @@ setDefault()
   &.active {
     .modal-receipt-pickup-mobile-item {
       &__icon {
-        ::v-deep svg path {
+        :deep svg path {
           fill: var(--green);
         }
       }
@@ -222,7 +222,7 @@ setDefault()
     width: 24px;
     height: 24px;
 
-    ::v-deep svg path {
+    :deep svg path {
       fill: var(--grayText2);
     }
   }
@@ -268,7 +268,7 @@ setDefault()
 
     border-bottom: 1px solid var(--yellowDark);
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
 

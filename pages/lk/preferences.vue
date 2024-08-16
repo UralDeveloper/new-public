@@ -150,7 +150,7 @@ const onSubmit = () => {}
   }
 
   &__input {
-    ::v-deep textarea {
+    :deep textarea {
       height: 160px;
       padding: 20px;
       font-weight: 500;

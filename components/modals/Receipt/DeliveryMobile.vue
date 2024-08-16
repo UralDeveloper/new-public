@@ -401,8 +401,8 @@ setDefault()
       grid-gap: 8px;
     }
 
-    ::v-deep input,
-    ::v-deep textarea {
+    :deep input,
+    :deep textarea {
       @include text_mini;
 
       @include mq($bp-super-small) {
@@ -412,7 +412,7 @@ setDefault()
   }
 
   &__textarea {
-    ::v-deep textarea {
+    :deep textarea {
       height: 80px;
     }
   }
@@ -584,7 +584,7 @@ setDefault()
     //}
     .modal-receipt-addresses-item {
       &__icon {
-        ::v-deep(.ui-icon) svg path {
+        :deep(.ui-icon) svg path {
           fill: #383838;
         }
       }
@@ -594,7 +594,7 @@ setDefault()
       }
 
       &__edit {
-        ::v-deep(.ui-icon) svg path {
+        :deep(.ui-icon) svg path {
           fill: var(--blackText3);
         }
       }

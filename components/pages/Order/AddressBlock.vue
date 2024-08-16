@@ -180,7 +180,7 @@ const condition = computed(() => {
     height: 40px;
 
     &--pickup {
-      ::v-deep(.ui-icon) svg path {
+      :deep(.ui-icon) svg path {
         fill: var(--green);
       }
     }

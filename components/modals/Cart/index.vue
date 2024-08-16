@@ -286,7 +286,7 @@ const submit = () => {
 .cart__promocode-block {
   margin: 10px 0;
 
-  ::v-deep > input {
+  :deep > input {
     background: var(--white);
   }
 }
@@ -395,7 +395,7 @@ const submit = () => {
     font-weight: 500;
     color: var(--grayText);
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
 

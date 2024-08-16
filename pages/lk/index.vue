@@ -230,7 +230,7 @@ setDefault()
     font-weight: 500;
     color: var(--grayText);
 
-    ::v-deep(.ui-icon) svg path {
+    :deep(.ui-icon) svg path {
       fill: var(--grayText2);
     }
 
@@ -261,7 +261,7 @@ setDefault()
     width: 16px;
     height: 16px;
 
-    ::v-deep svg path {
+    :deep svg path {
       fill: #262626;
     }
   }

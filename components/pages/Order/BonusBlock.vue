@@ -113,7 +113,7 @@ watch(() => getUserBonus.value, () => {
     @include text_large;
     font-weight: 700;
 
-    ::v-deep(.ui-icon) svg path {
+    :deep(.ui-icon) svg path {
       fill: var(--yellow);
     }
   }

@@ -257,7 +257,7 @@ const click = () => {
     border: 2px solid transparent;
     border-radius: 14px;
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
 

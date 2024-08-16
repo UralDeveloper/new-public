@@ -243,7 +243,7 @@ const deliveryFinishTime = computed(() => {
 
 <style lang="scss" scoped>
 .ruble-icon {
-  ::v-deep svg g path {
+  :deep svg g path {
     fill: black;
   }
 }
@@ -308,7 +308,7 @@ const deliveryFinishTime = computed(() => {
     background: none;
     border: 0;
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 24px;
       height: 24px;
 
@@ -449,7 +449,7 @@ const deliveryFinishTime = computed(() => {
         &__status {
           color: var(--blackText);
 
-          ::v-deep(.ui-icon) svg path {
+          :deep(.ui-icon) svg path {
             fill: #1C1B1F;
           }
         }
@@ -485,7 +485,7 @@ const deliveryFinishTime = computed(() => {
     font-weight: 600;
     color: var(--grayText);
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 20px;
       height: 20px;
 

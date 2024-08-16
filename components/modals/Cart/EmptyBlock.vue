@@ -49,7 +49,7 @@ const emits = defineEmits(['close'])
       display: none;
     }
 
-    ::v-deep(.ui-icon) svg path {
+    :deep(.ui-icon) svg path {
       fill: var(--blackText3);
     }
   }

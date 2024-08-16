@@ -105,7 +105,7 @@ function click() {
 </script>
 
 <style lang="scss" scoped>
-::v-deep(.clock-icon) svg path {
+:deep(.clock-icon) svg path {
   fill: $red !important;
 }
 .page-order-info-about {
@@ -176,7 +176,7 @@ function click() {
       font-size: 12px;
     }
 
-    ::v-deep(.ui-icon) svg {
+    :deep(.ui-icon) svg {
       width: 20px;
       height: 20px;
 
@@ -206,7 +206,7 @@ function click() {
   background: #FFF9DF;
   border-radius: 16px;
 
-  ::v-deep(.ui-icon) svg {
+  :deep(.ui-icon) svg {
     width: 12px;
     height: 12px;
 
