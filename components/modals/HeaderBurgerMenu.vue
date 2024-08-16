@@ -117,9 +117,6 @@
 </template>
 
 <script setup>
-import { useCommonStore } from '@/store/common';
-import { useCatalogStore } from "@/store/catalog";
-
 const catalogStore = useCatalogStore();
 const commonStore = useCommonStore()
 
@@ -335,11 +332,12 @@ const closeModal = () => {
 }
 
 .gray-bg {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    right: 0;
+    max-width: 512px;
     background: #262523F0;
     z-index: 2;
 }
