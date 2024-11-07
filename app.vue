@@ -12,6 +12,9 @@ const commonStore = useCommonStore();
 
 const { pickupLocations } = storeToRefs(commonStore)
 
+await commonStore.loadSettings();
+catalogStore.getCatalog();
+
 
 useHead({
   link: [
@@ -32,13 +35,13 @@ onMounted(() => {
   // if (!commonStore.selectedLocation) {
   //   useChangeLocation('pickup', pickupLocations.value('pickup')[0]);
   // }
+
+  nextTick(() => {
+    commonStore.getPickups();
+    commonStore.getDelivery();
+  })
 })
 
-commonStore.loadSettings();
-catalogStore.getCatalog();
-
-commonStore.getPickups();
-commonStore.getDelivery();
 commonStore.getDeliveryTimes();
 
 commonStore.getContacts();

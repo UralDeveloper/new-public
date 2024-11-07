@@ -56,7 +56,7 @@
                         <ClientOnly>
                             <ul class="footer__menu footer-menu">
                                 <li class="nav-item">
-                                    <NuxtLink class="nav-link" to="/halls">Банкетные залы</NuxtLink>
+                                    <NuxtLink class="nav-link" to="/halls">Корпоративы</NuxtLink>
                                 </li>
                                 <li class="nav-item">
                                     <NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink>

@@ -95,7 +95,7 @@
                                             <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/events">Мероприятия</NuxtLink>
                                         </li>
                                         <li class="nav-item">
-                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/halls">Банкетные залы</NuxtLink>
+                                            <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/halls">Корпоративы</NuxtLink>
                                         </li>
                                         <li class="nav-item">
                                             <NuxtLink @click="commonStore.toggleShowMobileMenu(false)" class="nav-link" to="/gallery">Галерея</NuxtLink>

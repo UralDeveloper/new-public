@@ -105,7 +105,7 @@
                             <li class="nav-item"><a class="nav-link" href="/gifts">Сертификаты</a></li>
                             <li class="nav-item"><a class="nav-link" href="/products">Торты на заказ</a></li>
                             <li class="nav-item"><a class="nav-link" href="/events">Мероприятия</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/halls">Банкетные залы</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/halls">Корпоративы</a></li>
                             <li class="nav-item"><a class="nav-link" href="/gallery">Галерея</a></li>
                         </ul>
                     </div>

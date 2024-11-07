@@ -47,7 +47,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item"><NuxtLink class="nav-link" to="/">Главная</NuxtLink></li>
                         <li class="nav-item"><NuxtLink class="nav-link" to="#">Бонусная карта</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink></li>
+                        <!-- <li class="nav-item"><NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink></li> -->
                         <li class="nav-item"><NuxtLink class="nav-link" to="/products">Идеально для подарка</NuxtLink></li>
                         <li class="nav-item"><NuxtLink class="nav-link" to="/menu">Меню</NuxtLink></li>
                         <li class="nav-item"><NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink></li>
