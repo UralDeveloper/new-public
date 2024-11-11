@@ -2,63 +2,15 @@
 
     <div class="page-gallery" style="margin: 180px 0 0;">
         <div class="container gallery-container">
-            <div class="gallery-wrapper">
-                <div class="galleryItem swiper-slide">
+            <div class="gallery-wrapper" v-for="(block, idx) in shownBlocks" :key="idx">
+                <div v-if="idx <= shownBlocksLength" class="galleryItem swiper-slide" v-for="(image, index) in block" :key="index">
                     <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                    </picture>
-                </div>
-                <div class="galleryItem swiper-slide">
-                    <picture>
-                        <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                            data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
+                        <source :srcset="image" type="image/webp" :key="index"><img
+                            data-fancybox="gallery" :data-src="imageSize(image, 'large')" alt="" v-lazy-load :key="index">
                     </picture>
                 </div>
             </div>
-            <button class="show-more btn btn-primary">
+            <button class="show-more btn btn-primary" @click="showMore()" v-if="shownBlocksLength + 1 < shownBlocks?.length">
                 Показать еще
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="#262523">
                     <mask id="mask0_472_4805" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25"
@@ -74,3 +26,45 @@
         </div>
     </div>
 </template>
+
+<script setup>
+const gallery = ref([]);
+const shownBlocks = ref([])
+const shownBlocksLength = ref(0);
+
+const getGallery = async () => {
+    const data = await $fetch('/api/wp-json/systeminfo/v1/gallery/31483');
+
+    if (data) {
+        gallery.value = data.images;
+
+        shownBlocks.value = splitArrayIntoChunks(gallery.value);
+    }
+}
+
+const showMore = () => {
+    shownBlocksLength.value++;
+}
+
+function splitArrayIntoChunks(array, chunkSize = 9) {
+  return array.reduce((result, item, index) => {
+    const chunkIndex = Math.floor(index / chunkSize);
+    if (!result[chunkIndex]) result[chunkIndex] = []; // создаем новый подмассив
+    result[chunkIndex].push(item);
+    return result;
+  }, []);
+}
+
+onMounted(() => {
+    getGallery();
+})
+</script>
+
+<style lang="scss" scoped>
+.gallery-container {
+    gap: 10px;
+}
+.show-more {
+    margin-top: 50px;
+}
+</style>

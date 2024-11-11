@@ -100,14 +100,16 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><NuxtLink class="nav-link active" to="/menu">Меню</NuxtLink></li>
+                            <li class="nav-item" v-for="(item, index) in restaurant.menues.restoran_main_menu" :key="index">
+                                <NuxtLink class="nav-link" :to="item.slug"> {{ item.name }} </NuxtLink>
+                            </li>
+                            <!-- <li class="nav-item"><NuxtLink class="nav-link active" to="/menu">Меню</NuxtLink></li>
                             <li class="nav-item"><NuxtLink class="nav-link" to="/delivery">Доставка</NuxtLink></li>
                             <li class="nav-item"><NuxtLink class="nav-link" to="#">Бонусная карта</NuxtLink></li>
                             <li class="nav-item"><NuxtLink class="nav-link" to="/gifts">Сертификаты</NuxtLink></li>
-                            <!-- <li class="nav-item"><NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink></li> -->
                             <li class="nav-item"><NuxtLink class="nav-link" to="/events">Мероприятия</NuxtLink></li>
                             <li class="nav-item"><NuxtLink class="nav-link" to="/halls">Корпоративы</NuxtLink></li>
-                            <li class="nav-item"><NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink></li>
+                            <li class="nav-item"><NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink></li> -->
                         </ul>
                     </div>
                 </div>
@@ -122,6 +124,7 @@ const commonStore = useCommonStore();
 const userStore = useUserStore();
 
 const { isAuth } = storeToRefs(userStore);
+const { restaurant } = storeToRefs(commonStore)
 
 const props = defineProps({
     extraClass: {
@@ -176,6 +179,11 @@ const onProfileClicked = () => {
         .btn-profile {
             display: none;
         }
+    }
+}
+.header-dark {
+    .nav-link.active {
+        border-bottom: 1px solid #000;
     }
 }
 </style>

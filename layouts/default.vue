@@ -1,7 +1,7 @@
 <template>
     <div class="layout-default">
         <div>
-            <LayoutHeader v-if="!routeName.toString().includes('delivery')" :extraClass="extraClassForHeader"></LayoutHeader>  
+            <LayoutHeader v-if="!routeName.toString().includes('delivery')" :extraClass="extraClassForHeader" /> 
 
             <slot />
 

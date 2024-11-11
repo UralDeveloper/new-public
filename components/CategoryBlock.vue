@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="titleBlock">
+        <div class="titleBlock" v-if="isShowTitle">
             <h3> {{ props.category?.name }} </h3>
         </div>
         <div class="catalog-wrapper">
@@ -14,6 +14,10 @@ const props = defineProps({
     category: {
         type: Object,
         default: () => {},
+    },
+    isShowTitle: {
+        type: Boolean,
+        default: true,
     }
 })
 </script>

@@ -23,116 +23,16 @@
             <div class="titleBlock">
                 <h2>Сертификаты</h2>
             </div>
-            <div class="catalog-wrapper">
-                <div class="certificateItem">
-                    <div class="certificateItem-preview">
-                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
-                            <picture>
-                                <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
-                                    src="assets/img/remove/certificate_preview.jpeg" alt="">
-                            </picture>
-                        </NuxtLink>
-                    </div>
-                    <div class="certificateItem-content">
-                        <div class="certificateItem-info">
-                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
-                            </h4>
-                            <span>
-                                Номинал: 1 000 ₽<br>
-                                Срок действия: 1 год
-                            </span>
-                        </div>
-                        <div class="certificateItem-footer">
-                            <div class="certificateItem-price">
-                                <span class="priceRub">2000</span>
-                            </div>
-                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</NuxtLink>
-                        </div>
-                    </div>
-                </div>
-                <div class="certificateItem">
-                    <div class="certificateItem-preview">
-                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
-                            <picture>
-                                <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
-                                    src="assets/img/remove/certificate_preview.jpeg" alt="">
-                            </picture>
-                        </NuxtLink>
-                    </div>
-                    <div class="certificateItem-content">
-                        <div class="certificateItem-info">
-                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
-                            </h4>
-                            <span>
-                                Номинал: 1 000 ₽<br>
-                                Срок действия: 1 год
-                            </span>
-                        </div>
-                        <div class="certificateItem-footer">
-                            <div class="certificateItem-price">
-                                <span class="priceRub">2000</span>
-                            </div>
-                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</NuxtLink>
-                        </div>
-                    </div>
-                </div>
-                <div class="certificateItem">
-                    <div class="certificateItem-preview">
-                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
-                            <picture>
-                                <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
-                                    src="assets/img/remove/certificate_preview.jpeg" alt="">
-                            </picture>
-                        </NuxtLink>
-                    </div>
-                    <div class="certificateItem-content">
-                        <div class="certificateItem-info">
-                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
-                            </h4>
-                            <span>
-                                Номинал: 1 000 ₽<br>
-                                Срок действия: 1 год
-                            </span>
-                        </div>
-                        <div class="certificateItem-footer">
-                            <div class="certificateItem-price">
-                                <span class="priceRub">2000</span>
-                            </div>
-                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</NuxtLink>
-                        </div>
-                    </div>
-                </div>
-                <div class="certificateItem">
-                    <div class="certificateItem-preview">
-                        <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">
-                            <picture>
-                                <source srcset="assets/img/remove/certificate_preview.webp" type="image/webp"><img
-                                    src="assets/img/remove/certificate_preview.jpeg" alt="">
-                            </picture>
-                        </NuxtLink>
-                    </div>
-                    <div class="certificateItem-content">
-                        <div class="certificateItem-info">
-                            <h4><NuxtLink data-bs-toggle="modal" data-bs-target="#certificate">Подарочный сертификат №1</NuxtLink>
-                            </h4>
-                            <span>
-                                Номинал: 1 000 ₽<br>
-                                Срок действия: 1 год
-                            </span>
-                        </div>
-                        <div class="certificateItem-footer">
-                            <div class="certificateItem-price">
-                                <span class="priceRub">2000</span>
-                            </div>
-                            <NuxtLink data-bs-toggle="modal" data-bs-target="#certificate" class="btn btn-primary">Заказать
-                                сертификат</NuxtLink>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            <CategoryBlock :category="gifts" :isShowTitle="false" />
+
+            {{ console.log(gifts) }}
         </div>
     </div>
 </template>
+
+<script setup>
+const catalogStore = useCatalogStore();
+
+const gifts = computed(() => catalogStore.filteredCatalog.find(item => +item.id === 209))
+</script>

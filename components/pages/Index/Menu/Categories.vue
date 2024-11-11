@@ -45,12 +45,9 @@
                 </div>
                 <div class="header-row-center">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/">Главная</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="#">Бонусная карта</NuxtLink></li>
-                        <!-- <li class="nav-item"><NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink></li> -->
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/products">Идеально для подарка</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/menu">Меню</NuxtLink></li>
-                        <li class="nav-item"><NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink></li>
+                        <li class="nav-item" v-for="(item, index) in restaurant.menues.restoran_main_menu" :key="index">
+                            <NuxtLink class="nav-link" :to="item.slug"> {{ item.name }} </NuxtLink>
+                        </li>
                     </ul>
                 </div>
                 <div class="header-row-right">
@@ -148,6 +145,7 @@ const commonStore = useCommonStore();
 const route = useRoute();
 
 const { categories } = storeToRefs(catalogStore);
+const { restaurant } = storeToRefs(commonStore)
 
 const menu = computed(() => categories?.value?.find(item => +item.id === 210)?.subCategories);
 
@@ -206,5 +204,9 @@ onMounted(() => {
 
 .nav-link {
     text-wrap: nowrap;
+
+    &.active {
+        border-bottom: 1px solid #000;
+    }
 }
 </style>
