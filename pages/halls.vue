@@ -284,11 +284,13 @@
 
 <script setup lang="ts">
 import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 watchEffect(() => {
     nextTick(() => {
         if (process.client) {
             let gallerySlider = new Swiper(".gallery-swiper", {
+                modules: [Navigation, Pagination],
                 slidesPerView: 1,
                 spaceBetween: 20,
                 loop: true,

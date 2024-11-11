@@ -51,11 +51,13 @@
 
 <script setup lang="ts">
 import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 watchEffect(() => {
     nextTick(() => {
         if (process.client) {
             let swiper_actions = new Swiper('.actions-swiper', {
+                modules: [Navigation],
                 slidesPerView: 3,
                 spaceBetween: 30,
                 rewind: true,

@@ -80,6 +80,8 @@ export const useCommonStore = defineStore('commonStore', {
     },
 
     robot: null,
+
+    restaurant: [],
   }),
 
   actions: {
@@ -113,6 +115,7 @@ export const useCommonStore = defineStore('commonStore', {
       this.single_stock_id = this.allSettings?.settings.single_stock_id ?? null;
       this.map_self_position_icon = this.allSettings?.map?.map_self_position_icon ?? null;
       this.pending_order_cansel_time = this.allSettings?.settings?.pending_order_cansel_time ?? (60 * 30);
+      this.restaurant = this.allSettings?.restoran || [];
 
       console.log('Loading settings finished');
     },

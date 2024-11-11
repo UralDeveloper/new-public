@@ -1,5 +1,6 @@
 <template>
-    <div class="firstScreen" style="background-image: url(assets/img/remove/bg_events.jpeg);">
+    <div class="firstScreen">
+        <img :data-src="restaurant?.home?.main_image" class="bg-image" alt="" v-lazy-load :key="restaurant?.home?.main_image">
         <div class="container firstScreen-container">
             <div class="firstScreen-titleBlock firstScreen-titleBlock-centered">
             </div>
@@ -14,28 +15,10 @@
             </div>
             <div class="swiper gallery-swiper">
                 <div class="gallery-swiper-wrapper swiper-wrapper">
-                    <div class="galleryItem swiper-slide">
+                    <div class="galleryItem swiper-slide" v-for="(item, index) in restaurant?.home.slides" :key="index">
                         <picture>
-                            <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                                data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                        </picture>
-                    </div>
-                    <div class="galleryItem swiper-slide">
-                        <picture>
-                            <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                                data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                        </picture>
-                    </div>
-                    <div class="galleryItem swiper-slide">
-                        <picture>
-                            <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                                data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
-                        </picture>
-                    </div>
-                    <div class="galleryItem swiper-slide">
-                        <picture>
-                            <source srcset="assets/img/remove/gallery_item.webp" type="image/webp"><img
-                                data-fancybox="gallery" src="assets/img/remove/gallery_item.jpeg" alt="">
+                            <source :srcset="item" type="image/webp"><img
+                                data-fancybox="gallery" :data-src="item" alt="" v-lazy-load :key="index">
                         </picture>
                     </div>
                 </div>
@@ -132,10 +115,11 @@
 
 <script setup lang="ts">
 import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 const commonStore = useCommonStore();
 
-const { events } = storeToRefs(commonStore)
+const { events, restaurant } = storeToRefs(commonStore)
 
 const selectedEvent = ref(null);
 
@@ -143,6 +127,7 @@ watchEffect(() => {
     nextTick(() => {
         if (process.client) {
             let gallerySlider = new Swiper(".gallery-swiper", {
+                modules: [Navigation, Pagination],
                 slidesPerView: 1,
                 spaceBetween: 20,
                 loop: true,
@@ -179,6 +164,20 @@ watchEffect(() => {
 </script>
 
 <style lang="scss" scoped>
+.firstScreen {
+    position: relative;
+
+    .bg-image {
+        position: absolute;
+        z-index: -1;
+        object-fit: cover;
+        max-height: 95vh;
+        width: 100%;
+    }
+}
+.galleryItem img {
+    // object-fit: contain;   
+}
 .footerMap {
 
     position: relative;
