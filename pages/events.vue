@@ -1,10 +1,11 @@
 <template>
 
-    <div class="firstScreen" style="background-image: url(assets/img/remove/bg_events.jpeg);">
+    <div class="firstScreen">
+        <img :data-src="restaurant?.events_page?.image" alt="" class="bg-image" v-lazy-load :key="restaurant?.events_page?.image">
         <div class="container firstScreen-container">
             <div class="firstScreen-titleBlock firstScreen-titleBlock-centered">
-                <h1>Мероприятия</h1>
-                <p>Невероятно нежные десерты от шеф-повора Public</p>
+                <h1>{{ restaurant?.events_page?.title }}</h1>
+                <p>{{ restaurant?.events_page?.subtitle }}</p>
             </div>
         </div>
     </div>
@@ -23,7 +24,20 @@
 <script setup>
 const commonStore = useCommonStore();
 
-const { events } = storeToRefs(commonStore)
+const { events, restaurant } = storeToRefs(commonStore);
 
 const selectedEvent = ref(null);
 </script>
+
+<style lang="scss" scoped>
+.firstScreen {
+    position: relative;
+}
+.bg-image {
+    max-height: 95vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+</style>
