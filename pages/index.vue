@@ -116,7 +116,7 @@
         </div>
     </div>
 
-    <div class="shortTextBlock">
+    <div id="cardloyal" class="shortTextBlock">
         <div class="container shortTextBlock-container">
             <div class="shortTextBlock-text loyal">
                 <div class="titleBlock">
@@ -173,12 +173,12 @@
                     <div class="footerMap-contacts-wrapper">
                         <div class="footerMap-contacts-info">
                             <img src="assets/img/icons/Icon_call.svg" alt="">
-                            <NuxtLink to="tel:+7 (495) 123-45-67">+7 (495) 123-45-67</NuxtLink>
+                            <NuxtLink to="tel:+73433753216">+7 (343) 375-32-16</NuxtLink>
                         </div>
-                        <div class="footerMap-contacts-info">
+                        <!-- <div class="footerMap-contacts-info">
                             <img src="assets/img/icons/Icon_call.svg" alt="">
                             <NuxtLink to="tel:+7 (495) 123-45-67">+7 (495) 123-45-67</NuxtLink>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="footerMap-contacts-item">
@@ -301,7 +301,7 @@ watchEffect(() => {
     border-bottom: none;
 }
 .shortTextBlock-text.loyal {
-    padding-bottom: 30px;
+    // padding-bottom: 30px;
 }
 
 .footerMap {
