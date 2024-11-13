@@ -71,7 +71,9 @@
     <div id="childrensRoom" class="chldrensRoom">
         <div class="container chldrensRoom-container">
             <div class="chldrensRoom-text">
-                <h2>Детская комната в ресторане Public</h2>
+                <div class="titleBlock">
+                    <h2>Детская комната в ресторане Public</h2>
+                </div>
                 <p>В нашем ресторане предусмотрена уютная детская комната, где ваши дети смогут весело провести время,
                     пока вы наслаждаетесь отдыхом. В комнате есть игрушки и развлечения для малышей разных возрастов. За
                     безопасностью и комфортом детей присматривает опытная няня. Вы можете быть спокойны, зная, что дети
@@ -113,6 +115,24 @@
             </div>
         </div>
     </div>
+    <style lang="scss" scoped>
+        .shortTextBlock {
+            &-container {
+                border-bottom: none;
+            }
+        }
+    </style>
+    <div class="shortTextBlock">
+        <div class="container shortTextBlock-container">
+            <div class="shortTextBlock-text loyal">
+                <h2>Программа лояльности</h2>
+                <p>В нашем ресторане действует накопительная бонусная система! Получайте 5% бонусов на карту с каждого
+                    чека при её получении. 1 бонус равен 1 рублю. Бонусами можно оплатить до 100% суммы покупки</p>
+                <a class="btn btn-primary shortTextBlock-btn"
+                    href="https://form.p-h.app/8e7437ec72c5e2c575a269710da141df">Получить карту</a>
+            </div>
+        </div>
+    </div>
 
     <div class="formResume">
         <div class="container-fluid formResume-container">
@@ -144,17 +164,6 @@
                         <button type="button" class="btn btn-primary">Отправить резюме</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-    <div class="shortTextBlock">
-        <div class="container shortTextBlock-container">
-            <div class="shortTextBlock-text loyal">
-                <h2>Программа лояльности</h2>
-                <p>В нашем ресторане действует накопительная бонусная система! Получайте 5% бонусов на карту с каждого
-                    чека при её получении. 1 бонус равен 1 рублю. Бонусами можно оплатить до 100% суммы покупки</p>
-                <a class="btn btn-primary shortTextBlock-btn"
-                    href="https://form.p-h.app/8e7437ec72c5e2c575a269710da141df">Получить карту</a>
             </div>
         </div>
     </div>
