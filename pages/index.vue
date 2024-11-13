@@ -173,11 +173,7 @@
                     <div class="footerMap-contacts-wrapper">
                         <div class="footerMap-contacts-info">
                             <img src="assets/img/icons/Icon_call.svg" alt="">
-                            <NuxtLink to="tel:+7 (495) 123-45-67">+7 (495) 123-45-67</NuxtLink>
-                        </div>
-                        <div class="footerMap-contacts-info">
-                            <img src="assets/img/icons/Icon_call.svg" alt="">
-                            <NuxtLink to="tel:+7 (495) 123-45-67">+7 (495) 123-45-67</NuxtLink>
+                            <NuxtLink :to="`tel:${commonStore.getPhone}`">{{ phoneFormat(commonStore.getPhone) }}</NuxtLink>
                         </div>
                     </div>
                 </div>

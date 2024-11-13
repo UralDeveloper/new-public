@@ -50,7 +50,7 @@
                                     fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero" />
                             </svg>
                         </div>
-                        <NuxtLink to="tel:+7 992 090-28-25">+7 992 090-28-25</NuxtLink>
+                        <NuxtLink :to="`tel:${commonStore.getPhone}`">{{ phoneFormat(commonStore.getPhone) }}</NuxtLink>
                     </div>
                 </div>
                 <div class="header-row-right">
