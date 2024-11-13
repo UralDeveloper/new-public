@@ -122,7 +122,9 @@
     <div class="shortTextBlock">
         <div class="container shortTextBlock-container">
             <div class="shortTextBlock-text loyal">
-                <h2>Программа лояльности</h2>
+                <div class="titleBlock">
+                    <h2>Программа лояльности</h2>
+                </div>
                 <p>В нашем ресторане действует накопительная бонусная система! Получайте 5% бонусов на карту с каждого
                     чека при её получении. 1 бонус равен 1 рублю. Бонусами можно оплатить до 100% суммы покупки</p>
                 <a class="btn btn-primary shortTextBlock-btn"
