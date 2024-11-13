@@ -16,7 +16,7 @@
             </div>
             <div class="swiper gallery-swiper">
                 <div class="gallery-swiper-wrapper swiper-wrapper">
-                    <div class="galleryItem swiper-slide" v-for="(item, index) in restaurant?.home.slides" :key="index">
+                    <div class="galleryItem swiper-slide" v-for="(item, index) in restaurant?.home.main_gallery" :key="index">
                         <picture>
                             <source :srcset="item" type="image/webp"><img data-fancybox="gallery" :data-src="item"
                                 alt="" v-lazy-load :key="index">
@@ -82,10 +82,7 @@
             <div class="chldrensRoom-img">
                 <div class="swiper chldrensRoom-swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide chldrensRoom-item"><img src="@/assets/img/remove/chldrensRoom_1.jpg" alt=""></div>
-                        <div class="swiper-slide chldrensRoom-item"><img src="@/assets/img/remove/chldrensRoom_2.jpg" alt=""></div>
-                        <div class="swiper-slide chldrensRoom-item"><img src="@/assets/img/remove/chldrensRoom_3.jpg" alt=""></div>
-                        <div class="swiper-slide chldrensRoom-item"><img src="@/assets/img/remove/chldrensRoom_4.jpg" alt=""></div>
+                        <div class="swiper-slide chldrensRoom-item" v-for="(item, index) in restaurant?.home.slides" :key="index"><img :data-src="item" alt="" v-lazy-load :key="item"></div>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev">
