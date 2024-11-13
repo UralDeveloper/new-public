@@ -118,7 +118,13 @@
             </div>
         </div>
     </div>
-    
+    <style lang="scss" scoped>
+        .shortTextBlock {
+            &-container {
+                border-bottom: none;
+            }
+        }
+    </style>
     <div class="shortTextBlock">
         <div class="container shortTextBlock-container">
             <div class="shortTextBlock-text loyal">
