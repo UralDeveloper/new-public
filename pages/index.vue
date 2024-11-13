@@ -116,7 +116,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="formResume">
         <div class="container-fluid formResume-container">
             <div class="formResume-image">
@@ -293,6 +293,7 @@ watchEffect(() => {
 
 .chldrensRoom-item {
     max-height: 500px;
+    height: auto;
 }
 
 .shortTextBlock-text.loyal {
