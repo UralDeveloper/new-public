@@ -118,6 +118,18 @@
             </div>
         </div>
     </div>
+    
+    <div class="shortTextBlock">
+        <div class="container shortTextBlock-container">
+            <div class="shortTextBlock-text loyal">
+                <h2>Программа лояльности</h2>
+                <p>В нашем ресторане действует накопительная бонусная система! Получайте 5% бонусов на карту с каждого
+                    чека при её получении. 1 бонус равен 1 рублю. Бонусами можно оплатить до 100% суммы покупки</p>
+                <a class="btn btn-primary shortTextBlock-btn"
+                    href="https://form.p-h.app/8e7437ec72c5e2c575a269710da141df">Получить карту</a>
+            </div>
+        </div>
+    </div>
 
     <div class="formResume">
         <div class="container-fluid formResume-container">
@@ -149,17 +161,6 @@
                         <button type="button" class="btn btn-primary">Отправить резюме</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-    <div class="shortTextBlock">
-        <div class="container shortTextBlock-container">
-            <div class="shortTextBlock-text loyal">
-                <h2>Программа лояльности</h2>
-                <p>В нашем ресторане действует накопительная бонусная система! Получайте 5% бонусов на карту с каждого
-                    чека при её получении. 1 бонус равен 1 рублю. Бонусами можно оплатить до 100% суммы покупки</p>
-                <a class="btn btn-primary shortTextBlock-btn"
-                    href="https://form.p-h.app/8e7437ec72c5e2c575a269710da141df">Получить карту</a>
             </div>
         </div>
     </div>
