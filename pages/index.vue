@@ -8,6 +8,16 @@
         </div>
     </div>
 
+    <div class="shortTextBlock shortTextBlock-about">
+        <div class="container shortTextBlock-container">
+            <div class="shortTextBlock-text">
+                <p>Паблик — это не просто ресторан, а место, где каждый день царит атмосфера праздника!</p>
+                <p>Здесь каждый найдет что-то особенное — будь то важное событие, романтический ужин или уютный вечер с близкими. Для маленьких гостей предусмотрена детская комната, где дети могут весело и безопасно играть, пока взрослые наслаждаются отдыхом.</p>
+                <p>Побалуйте себя изысканными блюдами кухни России, наслаждайтесь приятной музыкой и живым общением. Кроме того, в ресторане регулярно проходят мероприятия для взрослых и детей, делая каждый визит незабываемым!</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Галерея карусель -->
     <div class="gallery">
         <div class="container">
@@ -136,7 +146,7 @@
                 <img src="@/assets/img/remove/resumeBg.jpg" alt="">
             </div>
             <div class="formResume-block">
-                <h2>Оставить заявку</h2>
+                <h2>Присоединяйтесь к нашей команде</h2>
                 <form id="formResume-form" action="#">
                     <div class="form-floating">
                         <input type="text" class="form-control" required id="floatingInput" placeholder="Имя и Фамилия">

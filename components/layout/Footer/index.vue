@@ -38,26 +38,26 @@
                                 <NuxtLink class="nav-link" to="/delivery">Доставка</NuxtLink>
                             </li>
                             <li class="nav-item">
-                                <NuxtLink class="nav-link" to="#">Бонусная карта</NuxtLink>
+                                <NuxtLink class="nav-link" to="https://form.p-h.app/8e7437ec72c5e2c575a269710da141df">Бонусная карта</NuxtLink>
                             </li>
                             <li class="nav-item">
                                 <NuxtLink class="nav-link" to="/gifts">Сертификаты</NuxtLink>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <NuxtLink class="nav-link" to="/products">Торты на заказ</NuxtLink>
-                            </li>
-                            <li class="nav-item">
+                            </li> -->
+                            <!-- <li class="nav-item">
                                 <NuxtLink class="nav-link" to="/events">Мероприятия</NuxtLink>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 
                     <div class="footer__col">
                         <ClientOnly>
                             <ul class="footer__menu footer-menu">
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <NuxtLink class="nav-link" to="/halls">Корпоративы</NuxtLink>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <NuxtLink class="nav-link" to="/gallery">Галерея</NuxtLink>
                                 </li>
