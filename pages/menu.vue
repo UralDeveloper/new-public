@@ -4,7 +4,7 @@
         <!-- Карточки меню -->
         <div class="menuCards">
             <div class="container-fluid">
-                <div class="menuCards-wrapper">
+                <div class="menuCards-wrapper menuCards-big">
                     <PagesMenuCardItem 
                     v-for="item in menu"
                     :key="item"
@@ -18,11 +18,14 @@
 </template>
 
 <script setup lang="ts">
-const catalogStore = useCatalogStore();
+const commonStore = useCommonStore();
 
-const { categories } = storeToRefs(catalogStore);
+// const catalogStore = useCatalogStore();
+// const { categories } = storeToRefs(catalogStore);
 
-const menu = computed(() => categories?.value?.find(item => +item.id === 210)?.subCategories);
+// const menu = computed(() => categories?.value?.find(item => +item.id === 210)?.subCategories);
+
+const menu = computed(() => commonStore.restaurant?.restoran_menu_page?.menu)
 
 </script>
 

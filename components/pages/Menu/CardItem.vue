@@ -1,14 +1,14 @@
 <template>
     <div class="menuCardItem">
         <img 
-        :data-src="props.item.img" 
+        :data-src="props.item?.image?.url" 
         alt="" 
         v-lazy-load 
-        :key="props.item.id"
+        :key="props.item?.id"
         >
-        <NuxtLink :to="`/delivery/${props.item.id}`">
-            <span> {{ props.item.name }} </span>
-        </NuxtLink>
+        <a :href="`${props.item?.file?.link}`" target="_blank">
+            <span> {{ props.item?.name }} </span>
+        </a>
         <!-- <div class="subtitle">
             <div class="subtitle-item">
                 <span>Пн-Пт</span>
@@ -28,6 +28,10 @@ const props = defineProps({
         type: Object,
         default: () => {},
     }
+})
+
+onMounted(() => {
+    // console.log(props.item);
 })
 
 </script>
