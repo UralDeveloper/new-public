@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     vercel: {
       functions: {
-        maxDuration: 300,
+        maxDuration: 60,
       }
     }
   },
