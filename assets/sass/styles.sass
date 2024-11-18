@@ -81,7 +81,11 @@ body
             grid-template-columns: repeat(5, 1fr)
         &.menuCards-big
             grid-template-columns: repeat(2, 1fr)
-            
+            @media screen and ( max-width: 500px )
+                flex-direction: column
+            .menuCardItem
+                height: auto
+                aspect-ratio: 1/1
 .catalog
     &-delivery
         padding: 100px 0
