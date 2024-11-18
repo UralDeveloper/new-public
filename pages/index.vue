@@ -188,7 +188,7 @@
         </div>
     </div>
 
-    <div class="footerMap">
+    <div id="footerMap" class="footerMap">
         <div class="container">
             <div class="footerMap-contacts">
                 <p class="footerMap-contacts-blockTitle">Контакты</p>
