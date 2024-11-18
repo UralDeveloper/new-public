@@ -5,6 +5,20 @@
         <div class="container firstScreen-container">
             <div class="firstScreen-titleBlock firstScreen-titleBlock-centered">
             </div>
+            <div class="firstScreen-navigation">
+                <div class="firstScreen-navigation-item">
+                    <nuxt-link to="/#cardloyal" class="btn">
+                        <img src="/assets/img/icons/QR.png" alt="">
+                        Бонуснаяя карта
+                    </nuxt-link>
+                </div>
+                <div class="firstScreen-navigation-item">
+                    <nuxt-link to="/menu" class="btn">
+                        <img src="/assets/img/icons/package.png" alt="">
+                        Меню
+                    </nuxt-link>
+                </div>
+            </div>
         </div>
     </div>
 
