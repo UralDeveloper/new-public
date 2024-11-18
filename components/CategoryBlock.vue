@@ -23,9 +23,9 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.catalog-wrapper {
-    @include maq($bp-small) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+// .catalog-wrapper {
+//     @include maq($bp-small) {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
 </style>
