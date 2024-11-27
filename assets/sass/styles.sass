@@ -81,6 +81,9 @@ body
             grid-template-columns: repeat(5, 1fr)
         &.menuCards-big
             grid-template-columns: repeat(2, 1fr)
+            a
+                font-family: 'BravoRG'
+                font-size: clamp(28px, 5vw, 90px)
             @media screen and ( max-width: 500px )
                 flex-direction: column
             .menuCardItem
@@ -246,3 +249,7 @@ body
                     &:hover
                         background-color: #fff !important
                         color: $mainDark !important
+
+
+h2
+    font-family: 'BravoRG' !important

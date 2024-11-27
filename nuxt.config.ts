@@ -19,6 +19,7 @@ export default defineNuxtConfig({
   ],
 
   css: [
+    '@/assets/webfonts/bravo/bravo.css',
     '@/assets/webfonts/VelaSans/stylesheet.css',
     '@/assets/webfonts/Lighthaus/stylesheet.css',
     '@/assets/css/fontawesome.css',
