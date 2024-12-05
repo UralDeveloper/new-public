@@ -328,7 +328,10 @@ watchEffect(() => {
         width: 100%;
     }
 }
-
+.galleryItem picture {
+    width: 100%;
+    height: 100%;
+}
 .galleryItem img {
     // object-fit: contain;   
 }

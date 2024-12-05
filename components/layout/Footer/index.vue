@@ -143,7 +143,10 @@ const appTitle = commonStore?.titleDescription?.name
         grid-gap: 30px;
         position: relative;
 
-
+        img {
+            width: 160px;
+            height: auto;
+        }
         @include mq($bp-medium-big) {
             flex-direction: row;
             align-items: flex-start;
@@ -179,6 +182,9 @@ const appTitle = commonStore?.titleDescription?.name
 
         @include mq($bp-super-small) {
             padding: 0 20px;
+        }
+        @media screen and ( max-width: 500px ) {
+            gap: 40px !important;
         }
     }
 
@@ -282,28 +288,25 @@ const appTitle = commonStore?.titleDescription?.name
         flex-wrap: wrap;
         margin-top: 30px;
         padding-top: 16px;
-
         position: relative;
-
         z-index: 10 !important;
-
         border-top: 1px solid #D9D9D9;
-
         @include mq($bp-medium) {
             margin-top: 50px;
             padding-top: 22px;
         }
-
         @include maq($bp-small) {
             margin-bottom: 70px;
         }
-
         .lf-copyright {
             display: flex;
             gap: 10px;
             flex-wrap: nowrap;
             align-items: center;
             @include text_normal;
+        }
+        @media screen and ( max-width: 500px ) {
+            margin-bottom: 20px;
         }
     }
 

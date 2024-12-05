@@ -54,8 +54,14 @@
                     </div>
                 </div>
                 <div class="header-row-right">
-                    <NuxtLink data-bs-toggle="modal" data-bs-target="#bookingModal"
-                        class="btn btn-white btn-white-nobg header-stol">Забронировать стол</NuxtLink>
+                    <NuxtLink v-if="props.extraClass === 'dark'" data-bs-toggle="modal" 
+                        data-bs-target="#bookingModal" class="btn btn-primary header-stol">Забронировать стол
+                        </NuxtLink>
+                        <NuxtLink v-else data-bs-toggle="modal" data-bs-target="#bookingModal"
+                        class="btn btn-white btn-white-nobg header-stol">Забронировать стол
+                    </NuxtLink>
+                    <!-- <NuxtLink data-bs-toggle="modal" data-bs-target="#bookingModal"
+                        class="btn btn-white btn-white-nobg header-stol">Забронировать стол</NuxtLink> -->
                     <!-- <NuxtLink to="#" class="btn btn-primary btn-primary-nobg">Забронировать стол</NuxtLink> -->
                     <NuxtLink @click.prevent="cartStore.toggleShowCartModal(true)" class="btn-cart">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
